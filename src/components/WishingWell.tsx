@@ -35,7 +35,9 @@ const WishingWell = () => {
                 <div className={`text-2xl mt-8 transition-opacity duration-1000 ${showText2 ? "opacity-100" : "opacity-0"} font-serif`}>
                     [Thank you for your interest]
                 </div>
-                <div className={`w-16 h-16 bg-white rounded-full fixed bottom-4 left-1/2 transform -translate-x-1/2 transition-all duration-1000 items-center ${coinActive ? "animate-coin-toss" : "opacity-0"}`}></div>
+                <div className={`w-16 h-16 bg-white rounded-full fixed bottom-4 left-1/2 transform -translate-x-1/2 transition-all duration-1000 flex justify-center items-center ${coinActive ? "animate-coin-toss" : "opacity-0"}`}>
+                    {/* <div className="rounded-full w-3/4 h-3/4 bg-purple-300"></div> */}
+                </div>
                 
                 <button 
                     className={`mt-8 px-6 py-2 text-xl border-2 border-white transition-all duration-1000 hover:text-purple-300 hover:-translate-y-1 hover:duration-[300ms] ${showButton ? "opacity-100" : "opacity-0"} font-serif`}
