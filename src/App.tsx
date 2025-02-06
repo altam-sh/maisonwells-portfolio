@@ -1,12 +1,13 @@
-import './App.css'
+import React from "react";
+import WishingWell from "./components/WishingWell";
+import './index.css'
 
-function App() {
+const App: React.FC = () => {
+    return (
+        <div className="flex items-center justify-center min-h-screen bg-black">
+            <WishingWell />
+        </div>
+    );
+};
 
-  return (
-    <>
-        <h1 className="text-3xl font-bold underline">    Hello world!  </h1>
-    </>
-  )
-}
-
-export default App
+export default App;

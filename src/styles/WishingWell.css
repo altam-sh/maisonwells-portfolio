@@ -1,0 +1,91 @@
+.wishing-well-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    perspective: 1000px;
+    text-align: center;
+}
+
+.text-above, .text-below {
+    opacity: 0;
+    transition: opacity 1s ease;
+    font-size: 150px;
+    margin: 20px 0;
+}
+
+.text-below {
+    font-size: 44px;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.toss-button {
+    opacity: 0;
+    padding: 10px 20px;
+    font-size: 22px;
+    cursor: pointer;
+    margin-top: 50px;
+    transition: opacity 1s ease, transform 0.3s ease, color 0.3s ease;
+    background: transparent;
+    border: 3px solid black;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+
+.toss-button:hover {
+    color: #777;
+    transform: translateY(-5px);
+}
+
+.wishing-well {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 30px;
+    transition: transform 1s ease;
+}
+
+.coin {
+    position: fixed;
+    bottom: -65px;
+    width: 65px;
+    height: 65px;
+    background-color: black;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    transition: bottom 1s ease, left 1s ease, transform 1s ease, opacity 1s ease;
+    opacity: 0;
+}
+
+.coin-toss {
+    bottom: calc(50% + 50px);
+    left: 50%;
+    transform: translateX(-50%) rotateX(1080deg) scale(0.4);
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .text-above {
+        font-size: 80px;
+    }
+    .text-below {
+        font-size: 30px;
+    }
+    .toss-button {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+    .wishing-well {
+        width: 90%;
+    }
+    .coin {
+        width: 50px;
+        height: 50px;
+    }
+}
