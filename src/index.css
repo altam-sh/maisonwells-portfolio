@@ -18,7 +18,7 @@
 
 /* Apply Tailwind utility classes to the animation */
 .animate-coin-toss {
-    animation: coinToss 1.1s ease-out forwards;
+    animation: coinToss 1.25s ease-out forwards;
 }
 
 /* Tailwind utility classes for the rest of the layout (already correct) */
