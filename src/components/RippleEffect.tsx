@@ -1,40 +1,36 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback } from 'react';
 
 const RippleEffect: React.FC = () => {
   const [ripples, setRipples] = useState<{ top: number; left: number }[]>([]);
-  const lastRippleTime = useRef(0); // Ref to store the last time a ripple was created
-  const rippleDelay = 100; // Time in milliseconds between ripples (adjust this to control speed)
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    const now = Date.now();
-    
-    // If the time since the last ripple creation is greater than the delay, create a new ripple
-    if (now - lastRippleTime.current > rippleDelay) {
-      const target = e.target as HTMLElement;
-      const circle = {
-        top: e.clientY - target.getBoundingClientRect().top,
-        left: e.clientX - target.getBoundingClientRect().left,
-      };
+    // TypeScript type casting to ensure `getBoundingClientRect` is recognized
+    const target = e.target as HTMLElement;
 
-      setRipples((prevRipples) => [...prevRipples, circle]);
-      lastRippleTime.current = now; // Update the last ripple time
-    }
+    const circle = {
+      top: e.clientY - target.getBoundingClientRect().top,
+      left: e.clientX - target.getBoundingClientRect().left,
+    };
+
+    // Add the new ripple to the state, without clearing the previous ones
+    setRipples((prevRipples) => [...prevRipples, circle]);
   }, []);
 
   const handleMouseEnter = (e: React.MouseEvent) => {
-    // Trigger first ripple on hover
+    // Start the ripple on hover
     handleMouseMove(e);
   };
 
   const handleAnimationEnd = (index: number) => {
+    // Remove the ripple from the state after the animation ends
     setRipples((prevRipples) => prevRipples.filter((_, i) => i !== index));
   };
 
   return (
     <div
       className="relative inline-block"
-      onMouseMove={handleMouseMove} // Track the mouse movement for creating ripples
-      onMouseEnter={handleMouseEnter} // Trigger a ripple when hovering over the area
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
     >
       <div className="w-64 h-64 border-3 border-white rounded-full relative overflow-hidden">
         {ripples.map((ripple, index) => (
@@ -49,7 +45,7 @@ const RippleEffect: React.FC = () => {
               animation: 'ripple-animation 0.6s ease-out forwards',
               backgroundColor: 'transparent', // Transparent fill for ripple
             }}
-            onAnimationEnd={() => handleAnimationEnd(index)}
+            onAnimationEnd={() => handleAnimationEnd(index)} // Trigger removal after animation ends
           />
         ))}
       </div>
