@@ -33,21 +33,27 @@ const RippleEffect: React.FC = () => {
       onMouseEnter={handleMouseEnter}
     >
       <div className="w-64 h-64 border-3 border-white rounded-full relative overflow-hidden">
-        {ripples.map((ripple, index) => (
-          <div
-            key={index}
-            className="absolute border-2 border-white opacity-40 rounded-full pointer-events-none"
-            style={{
-              top: ripple.top - 25, // Position ripple centered on mouse
-              left: ripple.left - 25,
-              width: 50, // Default ripple size
-              height: 50, // Default ripple size
-              animation: 'ripple-animation 0.6s ease-out forwards',
-              backgroundColor: 'transparent', // Transparent fill for ripple
-            }}
-            onAnimationEnd={() => handleAnimationEnd(index)} // Trigger removal after animation ends
-          />
-        ))}
+        {ripples.map((ripple, index) => {
+          // Determine the opacity of the ripple: only show 1 out of 5
+          const isVisible = index % 5 === 0;
+
+          return (
+            <div
+              key={index}
+              className="absolute border-2 border-white rounded-full pointer-events-none"
+              style={{
+                top: ripple.top - 25, // Position ripple centered on mouse
+                left: ripple.left - 25,
+                width: 50, // Default ripple size
+                height: 50, // Default ripple size
+                animation: 'ripple-animation 0.6s ease-out forwards',
+                backgroundColor: 'transparent', // Transparent fill for ripple
+                opacity: isVisible ? 0.4 : 0, // Only 1/5 ripples are visible
+              }}
+              onAnimationEnd={() => handleAnimationEnd(index)} // Trigger removal after animation ends
+            />
+          );
+        })}
       </div>
     </div>
   );
