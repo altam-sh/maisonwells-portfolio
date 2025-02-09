@@ -16,6 +16,17 @@
     }
 }
 
+@keyframes ripple-animation {
+    0% {
+      transform: scale(0);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(5);
+      opacity: 0;
+    }
+  }
+
 /* Apply Tailwind utility classes to the animation */
 .animate-coin-toss {
     animation: coinToss 1.25s ease-out forwards;
