@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import RainEffect from '../components/RainEffect';
-import RippleEffect from '../components/RippleEffect';
 import type { PageProps } from '../App';
 
 // Interface for text opacity states
@@ -101,9 +99,7 @@ const HomePage: React.FC<PageProps> = ({ navigate }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen py-8 px-4 bg-black overflow-hidden relative" style={{ perspective: '1500px' }}>
-      <RippleEffect/>
-      <RainEffect/>
+    <div className="flex flex-col justify-center items-center min-h-screen py-8 px-4 bg-transparent overflow-hidden relative" style={{ perspective: '1500px' }}>
       
       <div className="flex flex-col items-center justify-center w-full max-w-4xl mx-auto space-y-4">
         <div className="text-center">
@@ -122,7 +118,7 @@ const HomePage: React.FC<PageProps> = ({ navigate }) => {
               opacity: textOpacity.textAbove2
             }}
           >
-            "A home for every version of me"
+            "a home for every version of me"
           </div>
         </div>
         

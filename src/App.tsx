@@ -34,9 +34,18 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {currentPage === 'home' && <HomePage navigate={navigate} />}
-      {currentPage === 'mainmenu' && <MainMenu navigate={navigate} />}
+    <div className="App relative min-h-screen bg-black text-white overflow-hidden">
+      {(currentPage === 'home' || currentPage === 'mainmenu') && (
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <RippleEffect />
+          <RainEffect />
+        </div>
+      )}
+
+      <div className="relative z-10">
+        {currentPage === 'home' && <HomePage navigate={navigate} />}
+        {currentPage === 'mainmenu' && <MainMenu navigate={navigate} />}
+      </div>
     </div>
   );
 }
