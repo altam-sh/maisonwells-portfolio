@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import RainEffect from '../components/RainEffect';
-import RippleEffect from '../components/RippleEffect';
 import type { PageProps } from '../App';
 
 const MainMenu: React.FC<PageProps> = ({ navigate }) => {
@@ -15,9 +13,7 @@ const MainMenu: React.FC<PageProps> = ({ navigate }) => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-black text-white" style={{ perspective: '1500px' }}>
-      <RippleEffect />
-      <RainEffect />
+    <div className="flex flex-col justify-center items-center min-h-screen bg-transparent text-white" style={{ perspective: '1500px' }}>
       
       {/* <div 
         className="text-4xl mb-8 transition-opacity duration-1000 font-serif"
