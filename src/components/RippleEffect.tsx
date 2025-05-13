@@ -1,59 +1,86 @@
-import React, { useState, useCallback, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const RippleEffect: React.FC = () => {
-  const [ripples, setRipples] = useState<{ top: number; left: number }[]>([]);
-  const lastRippleTime = useRef(0); // Ref to store the last time a ripple was created
-  const rippleDelay = 100; // Time in milliseconds between ripples (adjust this to control speed)
-
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    const now = Date.now();
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
     
-    // If the time since the last ripple creation is greater than the delay, create a new ripple
-    if (now - lastRippleTime.current > rippleDelay) {
-      const target = e.target as HTMLElement;
-      const circle = {
-        top: e.clientY - target.getBoundingClientRect().top,
-        left: e.clientX - target.getBoundingClientRect().left,
-      };
-
-      setRipples((prevRipples) => [...prevRipples, circle]);
-      lastRippleTime.current = now; // Update the last ripple time
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    
+    // Make canvas fullscreen
+    const resizeCanvas = (): void => {
+      if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+    };
+    
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    
+    // Ripple effect logic
+    interface Ripple {
+      x: number;
+      y: number;
+      radius: number;
+      opacity: number;
     }
+    
+    const ripples: Ripple[] = [];
+    
+    function createRipple(): void {
+      if (!canvas) return;
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      ripples.push({ x, y, radius: 0, opacity: 0.5 });
+    }
+    
+    function animateRipples(): void {
+      if (!canvas) return;
+      if (!ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      for (let i = ripples.length - 1; i >= 0; i--) {
+        const ripple = ripples[i];
+        
+        ctx.beginPath();
+        ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(255, 255, 255, ${ripple.opacity})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        
+        ripple.radius += 0.5;
+        ripple.opacity -= 0.005;
+        
+        if (ripple.opacity <= 0) {
+          ripples.splice(i, 1);
+        }
+      }
+      
+      animationRef.current = requestAnimationFrame(animateRipples);
+    }
+    
+    // Start ripple creation and animation
+    const rippleInterval = setInterval(createRipple, 1000);
+    const animationRef = { current: 0 };
+    animationRef.current = requestAnimationFrame(animateRipples);
+    
+    // Cleanup
+    return () => {
+      clearInterval(rippleInterval);
+      cancelAnimationFrame(animationRef.current);
+      window.removeEventListener('resize', resizeCanvas);
+    };
   }, []);
-
-  const handleMouseEnter = (e: React.MouseEvent) => {
-    // Trigger first ripple on hover
-    handleMouseMove(e);
-  };
-
-  const handleAnimationEnd = (index: number) => {
-    setRipples((prevRipples) => prevRipples.filter((_, i) => i !== index));
-  };
-
+  
   return (
-    <div
-      className="relative inline-block"
-      onMouseMove={handleMouseMove} // Track the mouse movement for creating ripples
-      onMouseEnter={handleMouseEnter} // Trigger a ripple when hovering over the area
-    >
-      <div className="w-64 h-64 border-3 border-white rounded-full relative overflow-hidden">
-        {ripples.map((ripple, index) => (
-          <div
-            key={index}
-            className="absolute border-2 border-white opacity-40 rounded-full pointer-events-none"
-            style={{
-              top: ripple.top - 25, // Position ripple centered on mouse
-              left: ripple.left - 25,
-              width: 50, // Default ripple size
-              height: 50, // Default ripple size
-              animation: 'ripple-animation 0.6s ease-out forwards',
-              backgroundColor: 'transparent', // Transparent fill for ripple
-            }}
-            onAnimationEnd={() => handleAnimationEnd(index)}
-          />
-        ))}
-      </div>
-    </div>
+    <canvas
+      ref={canvasRef}
+      className="fixed top-0 left-0 w-full h-full z-[-1] pointer-events-none"
+    />
   );
 };
 

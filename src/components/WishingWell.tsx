@@ -3,13 +3,17 @@ import { useState, useEffect } from "react";
 const WishingWell = () => {
     const [showText1, setShowText1] = useState(false);
     const [showText2, setShowText2] = useState(false);
+    const [showText3, setShowText3] = useState(false);
+    const [showText4, setShowText4] = useState(false);
     const [showButton, setShowButton] = useState(false);
     const [coinActive, setCoinActive] = useState(false);
 
     useEffect(() => {
-        setTimeout(() => setShowText1(true), 300);
-        setTimeout(() => setShowText2(true), 900);
-        setTimeout(() => setShowButton(true), 1500);
+        setTimeout(() => setShowText1(true), 200);
+        setTimeout(() => setShowText2(true), 600);
+        setTimeout(() => setShowText3(true), 1000);
+        setTimeout(() => setShowText4(true), 1200);
+        setTimeout(() => setShowButton(true), 1700);
     }, []);
 
     const handleToss = () => {
@@ -30,9 +34,15 @@ const WishingWell = () => {
                 <div className={`text-6xl mb-10 transition-opacity duration-1000 ${showText1 ? "opacity-100" : "opacity-0"} font-serif`}>
                     Maison Wells
                 </div>
+                <div className={`text-6xl mb-10 transition-opacity duration-1000 ${showText2 ? "opacity-100" : "opacity-0"} font-serif`}>
+                    Personal Portfolio
+                </div>
                 <img className="w-72 md:w-96 lg:w-[400px] transition-transform duration-1000" 
                     src="/images/wishingwell.png" alt="[Wishing Well Picture]" />
-                <div className={`text-2xl mt-8 transition-opacity duration-1000 ${showText2 ? "opacity-100" : "opacity-0"} font-serif`}>
+                <div className={`text-2xl mt-8 transition-opacity duration-1000 ${showText3 ? "opacity-100" : "opacity-0"} font-serif`}>
+                    Presented by Altamash Sheikh
+                </div>
+                <div className={`text-2xl mt-8 transition-opacity duration-1000 ${showText4 ? "opacity-100" : "opacity-0"} font-serif`}>
                     [Thank you for your interest]
                 </div>
                 <div className={`w-16 h-16 bg-white rounded-full fixed bottom-4 left-1/2 transform -translate-x-1/2 transition-all duration-1000 flex justify-center items-center ${coinActive ? "animate-coin-toss" : "opacity-0"}`}>
