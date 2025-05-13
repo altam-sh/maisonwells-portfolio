@@ -17,6 +17,8 @@
 import { useState, useEffect } from 'react';
 import HomePage from './pages/HomePage';
 import MainMenu from './pages/MainMenu';
+import RippleEffect from './components/RippleEffect';
+import RainEffect from './components/RainEffect';
 
 type Page = 'home' | 'mainmenu';
 

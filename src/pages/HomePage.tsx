@@ -90,9 +90,9 @@ const HomePage: React.FC<PageProps> = ({ navigate }) => {
     }, 900);
     
     // Fade out picture
-    setTimeout(() => {
-      setTextOpacity(prev => ({ ...prev, picture: 0 }));
-    }, 1500);
+    // setTimeout(() => {
+    //   setTextOpacity(prev => ({ ...prev, picture: 0 }));
+    // }, 1500);
     
     // Navigate to main menu
     setTimeout(() => {
@@ -102,8 +102,8 @@ const HomePage: React.FC<PageProps> = ({ navigate }) => {
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen py-8 px-4 bg-black overflow-hidden relative" style={{ perspective: '1500px' }}>
-      <RippleEffect />
-      <RainEffect />
+      <RippleEffect/>
+      <RainEffect/>
       
       <div className="flex flex-col items-center justify-center w-full max-w-4xl mx-auto space-y-4">
         <div className="text-center">
@@ -162,7 +162,6 @@ const HomePage: React.FC<PageProps> = ({ navigate }) => {
             className="text-[1.2vw] mt-6 px-4 py-2 font-serif text-white bg-transparent hover:text-purple-300 hover:-translate-y-1 transition-all duration-300"
             style={{ 
               opacity: textOpacity.button,
-              //fontSize: 'clamp(0.9rem, 1.5vw, 1.4rem)',
               border: '2px solid white'
             }}
             onClick={handleTossClick}
