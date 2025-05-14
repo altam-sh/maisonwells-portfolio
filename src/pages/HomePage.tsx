@@ -155,7 +155,7 @@ const HomePage: React.FC<PageProps> = ({ navigate }) => {
           </div>
           
           <button 
-            className="text-[1.2vw] mt-6 px-4 py-2 font-serif text-white bg-transparent hover:text-purple-300 hover:-translate-y-1 transition-all duration-300"
+            className="text-[1.2vw] mt-6 px-4 py-2 font-serif text-white bg-transparent hover:text-purple-400 hover:-translate-y-1 transition-all duration-300"
             style={{ 
               opacity: textOpacity.button,
               border: '2px solid white'

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, FC } from "react";
 import clsx from "clsx";
 
 type ArrowDirection = "top" | "bottom" | "left" | "right";
@@ -6,11 +6,17 @@ type ArrowDirection = "top" | "bottom" | "left" | "right";
 interface ArrowButtonProps {
   direction: ArrowDirection;
   svgPath: string;
+  onHoverChange?: (direction: ArrowDirection | null) => void;
   fadeOut?: boolean;
 }
 
-const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, svgPath, fadeOut }) => {
-  const [visible, setVisible] = useState(false);
+const ArrowButton: FC<ArrowButtonProps> = ({
+  direction,
+  svgPath,
+  onHoverChange,
+  fadeOut = false,
+}) => {
+  const [visible, setVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 100);
@@ -37,11 +43,11 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, svgPath, fadeOut }
     right: "rotate-180",
   }[direction];
 
-  const hoverMove = {
-    top: "hover:translate-y-2",
-    bottom: "hover:-translate-y-2",
-    left: "hover:translate-x-2",
-    right: "hover:-translate-x-2",
+  const hoverAnimation = {
+    top: "hover:-translate-y-2",
+    bottom: "hover:translate-y-2",
+    left: "hover:-translate-x-2",
+    right: "hover:translate-x-2",
   }[direction];
 
   const padding = {
@@ -52,23 +58,26 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, svgPath, fadeOut }
   }[direction];
 
   return (
-    <img
-      src={svgPath}
-      alt={`${direction} arrow`}
+    <div
       className={clsx(
-        "absolute w-[4vw] h-auto",
-        "transition-transform duration-300 ease-in-out",
-        "hover:opacity-60",
+        "absolute transition-opacity duration-500 cursor-pointer",
         positionClasses,
-        rotation,
-        hoverMove,
         padding,
-        visible ? "opacity-100" : "opacity-0"
+        visible && !fadeOut ? "opacity-100" : "opacity-0"
       )}
-      style={{
-        transition: "transform 0.3s ease, opacity 0.6s ease",
-      }}
-    />
+      onMouseEnter={() => onHoverChange?.(direction)}
+      onMouseLeave={() => onHoverChange?.(null)}
+    >
+      <img
+        src={svgPath}
+        alt={`${direction} arrow`}
+        className={clsx(
+          "w-[4vw] h-auto transition-transform duration-300 ease-in-out",
+          rotation,
+          hoverAnimation
+        )}
+      />
+    </div>
   );
 };
 
