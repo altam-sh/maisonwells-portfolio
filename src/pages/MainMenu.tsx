@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { PageProps } from '../App';
+import ArrowButton from "../components/ArrowButton";
 
 const MainMenu: React.FC<PageProps> = ({ navigate }) => {
   const [fadeIn, setFadeIn] = useState<boolean>(false);
@@ -63,6 +64,13 @@ const MainMenu: React.FC<PageProps> = ({ navigate }) => {
         >
           [welcome home]
         </button>
+      </div>
+
+      <div className="absolute w-screen h-screen bg-transparent">
+        <ArrowButton direction="top" svgPath="/images/arrow.svg" />
+        <ArrowButton direction="bottom" svgPath="/images/arrow.svg" />
+        <ArrowButton direction="left" svgPath="/images/arrow.svg" />
+        <ArrowButton direction="right" svgPath="/images/arrow.svg" />
       </div>
       
     </div>
