@@ -4,10 +4,10 @@ import ArrowButton from "../components/ArrowButton";
 
 const MainMenu: React.FC<PageProps> = ({ navigate }) => {
   const [fadeIn, setFadeIn] = useState<boolean>(false);
+  const [fadeOutArrows, setFadeOutArrows] = useState(false);
   const [pictureScale, setPictureScale] = useState<number>(1.4);
   
   useEffect(() => {
-    // Trigger fade-in animation when component mounts
     setTimeout(() => {
       setFadeIn(true);
     }, 100);
@@ -56,6 +56,7 @@ const MainMenu: React.FC<PageProps> = ({ navigate }) => {
           onClick={() => {
             setPictureScale(1);
             setFadeIn(false);
+            setFadeOutArrows(true);
             setTimeout(() => {
               navigate('home');
             }, 1000);
@@ -67,10 +68,10 @@ const MainMenu: React.FC<PageProps> = ({ navigate }) => {
       </div>
 
       <div className="absolute w-screen h-screen bg-transparent">
-        <ArrowButton direction="top" svgPath="/images/arrow.svg" />
-        <ArrowButton direction="bottom" svgPath="/images/arrow.svg" />
-        <ArrowButton direction="left" svgPath="/images/arrow.svg" />
-        <ArrowButton direction="right" svgPath="/images/arrow.svg" />
+        <ArrowButton direction="top" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows}/>
+        <ArrowButton direction="bottom" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows}/>
+        <ArrowButton direction="left" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows}/>
+        <ArrowButton direction="right" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows}/>
       </div>
       
     </div>

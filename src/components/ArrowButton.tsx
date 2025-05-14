@@ -6,15 +6,22 @@ type ArrowDirection = "top" | "bottom" | "left" | "right";
 interface ArrowButtonProps {
   direction: ArrowDirection;
   svgPath: string;
+  fadeOut?: boolean;
 }
 
-const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, svgPath }) => {
+const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, svgPath, fadeOut }) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (fadeOut) {
+      setVisible(false);
+    }
+  }, [fadeOut]);
 
   const positionClasses = {
     top: "top-0 left-1/2 -translate-x-1/2",
@@ -31,13 +38,13 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, svgPath }) => {
   }[direction];
 
   const hoverMove = {
-    top: "transition-transform duration-300 ease-in-out transform hover:translate-y-2",
-    bottom: "transition-transform duration-300 ease-in-out transform hover:-translate-y-2",
-    left: "transition-transform duration-300 ease-in-out transform hover:translate-x-2",
-    right: "transition-transform duration-300 ease-in-out transform hover:-translate-x-2",
+    top: "hover:translate-y-2",
+    bottom: "hover:-translate-y-2",
+    left: "hover:translate-x-2",
+    right: "hover:-translate-x-2",
   }[direction];
 
-    const padding = {
+  const padding = {
     top: "mt-[3vw]",
     bottom: "mb-[3vw]",
     left: "ml-[3vw]",
@@ -49,8 +56,9 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, svgPath }) => {
       src={svgPath}
       alt={`${direction} arrow`}
       className={clsx(
-        "absolute w-[4vw] h-auto transition-all duration-500 ease-in-out",
-        "text-white hover:text-purple-500", // color control
+        "absolute w-[4vw] h-auto",
+        "transition-transform duration-300 ease-in-out",
+        "hover:opacity-60",
         positionClasses,
         rotation,
         hoverMove,
@@ -58,7 +66,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, svgPath }) => {
         visible ? "opacity-100" : "opacity-0"
       )}
       style={{
-        transition: "transform 0.5s ease, opacity 1s ease, color 0.3s ease",
+        transition: "transform 0.3s ease, opacity 0.6s ease",
       }}
     />
   );
