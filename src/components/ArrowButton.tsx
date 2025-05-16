@@ -73,6 +73,8 @@ const ArrowButton: FC<ArrowButtonProps> = ({
         alt={`${direction} arrow`}
         className={clsx(
           "w-[4vw] h-auto transition-transform duration-300 ease-in-out",
+          "transition-opacity duration-300",
+          "hover:opacity-70",
           rotation,
           hoverAnimation
         )}
