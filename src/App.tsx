@@ -17,10 +17,11 @@
 import { useState, useEffect } from 'react';
 import HomePage from './pages/HomePage';
 import MainMenu from './pages/MainMenu';
+import AboutMe from './pages/AboutMe';
 import RippleEffect from './components/RippleEffect';
 import RainEffect from './components/RainEffect';
 
-type Page = 'home' | 'mainmenu';
+type Page = 'home' | 'mainmenu' | 'about';
 
 interface PageProps {
   navigate: (page: Page) => void;
@@ -45,6 +46,7 @@ function App() {
       <div className="relative z-10">
         {currentPage === 'home' && <HomePage navigate={navigate} />}
         {currentPage === 'mainmenu' && <MainMenu navigate={navigate} />}
+        {currentPage === 'about' && <AboutMe navigate={navigate} />}
       </div>
     </div>
   );

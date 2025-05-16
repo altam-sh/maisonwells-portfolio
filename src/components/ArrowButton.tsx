@@ -1,5 +1,6 @@
 import { useEffect, useState, FC } from "react";
 import clsx from "clsx";
+import type { Page } from "../App";
 
 type ArrowDirection = "top" | "bottom" | "left" | "right";
 
@@ -8,6 +9,8 @@ interface ArrowButtonProps {
   svgPath: string;
   onHoverChange?: (direction: ArrowDirection | null) => void;
   fadeOut?: boolean;
+  navigate?: (page: Page) => void;
+  pageName?: Page;
 }
 
 const ArrowButton: FC<ArrowButtonProps> = ({
@@ -15,8 +18,17 @@ const ArrowButton: FC<ArrowButtonProps> = ({
   svgPath,
   onHoverChange,
   fadeOut = false,
+  navigate,
+  pageName,
 }) => {
   const [visible, setVisible] = useState<boolean>(false);
+  const handleClick = () => {
+    if (navigate && pageName) {
+      setTimeout(() => {
+        navigate(pageName);
+      }, 700);
+    }
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 100);
@@ -67,6 +79,7 @@ const ArrowButton: FC<ArrowButtonProps> = ({
       )}
       onMouseEnter={() => onHoverChange?.(direction)}
       onMouseLeave={() => onHoverChange?.(null)}
+      onClick={handleClick}
     >
       <img
         src={svgPath}

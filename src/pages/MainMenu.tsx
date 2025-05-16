@@ -16,7 +16,7 @@ const MainMenu: FC<PageProps> = ({ navigate }) => {
     top: "[Hear Me Out]",
     bottom: "[Cœurs Endormis]",
     left: "[Enchanté]",
-    right: "[The Right Path]",
+    right: '[The "Right" Path]',
   };
 
   const text = hoveredDirection ? directionLabels[hoveredDirection] : "";
@@ -82,10 +82,10 @@ const MainMenu: FC<PageProps> = ({ navigate }) => {
         </button>
       </div>
       <div className="absolute w-screen h-screen bg-transparent">
-        <ArrowButton direction="top" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} />
-        <ArrowButton direction="bottom" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} />
-        <ArrowButton direction="left" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} />
-        <ArrowButton direction="right" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} />
+        <ArrowButton direction="top" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="about" />
+        <ArrowButton direction="bottom" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="about" />
+        <ArrowButton direction="left" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="about" />
+        <ArrowButton direction="right" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="about" />
       </div>
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div
