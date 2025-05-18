@@ -1,0 +1,46 @@
+@keyframes slideFromTop {
+  from { transform: translateY(-40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideFromBottom {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideFromLeft {
+  from { transform: translateX(-40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideFromRight {
+  from { transform: translateX(40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-from-top {
+  animation: slideFromTop 0.5s ease-out forwards;
+}
+
+.slide-from-bottom {
+  animation: slideFromBottom 0.5s ease-out forwards;
+}
+
+.slide-from-left {
+  animation: slideFromLeft 0.5s ease-out forwards;
+}
+
+.slide-from-right {
+  animation: slideFromRight 0.5s ease-out forwards;
+}
+
+/* Reset animation when element is hidden */
+.opacity-0 {
+  animation: none;
+}
+
+/* Ensure animation restarts each time */
+.slide-from-top, .slide-from-bottom, .slide-from-left, .slide-from-right {
+  animation-fill-mode: both;
+  animation-delay: 0s;
+}
