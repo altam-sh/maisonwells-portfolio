@@ -94,8 +94,8 @@ const HomePage: React.FC<PageProps> = ({ navigate }) => {
     
     // Navigate to main menu
     setTimeout(() => {
-      navigate('mainmenu');
-    }, 1700);
+      navigate('mainmenu', 'none');
+    }, 700);
   };
 
   return (
@@ -125,7 +125,7 @@ const HomePage: React.FC<PageProps> = ({ navigate }) => {
         <div className="flex items-center justify-center py-2">
           <img
             className="w-[14vw] h-auto transition-all duration-1000"
-            src="../public/images/wishingwell.png"
+            src="../images/wishingwell.png"
             alt="Wishing Well"
             style={{
               transform: `scale(${pictureScale})`,

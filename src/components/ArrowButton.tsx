@@ -1,6 +1,6 @@
 import { useEffect, useState, FC } from "react";
 import clsx from "clsx";
-import type { Page } from "../App";
+import type { Page, TransitionDirection } from "../App";
 
 type ArrowDirection = "top" | "bottom" | "left" | "right";
 
@@ -9,7 +9,7 @@ interface ArrowButtonProps {
   svgPath: string;
   onHoverChange?: (direction: ArrowDirection | null) => void;
   fadeOut?: boolean;
-  navigate?: (page: Page) => void;
+  navigate?: (page: Page, direction: TransitionDirection) => void;
   pageName?: Page;
   onClickStart?: () => void;
 }
@@ -24,14 +24,22 @@ const ArrowButton: FC<ArrowButtonProps> = ({
   onClickStart,
 }) => {
   const [visible, setVisible] = useState<boolean>(false);
+  
+  const getTransitionDirection = (arrowDir: ArrowDirection): TransitionDirection => {
+    switch (arrowDir) {
+      case "top": return "down";
+      case "bottom": return "up";
+      case "left": return "right";
+      case "right": return "left";
+      default: return "none";
+    }
+  };
 
   const handleClick = () => {
-    onClickStart?.(); 
+    onClickStart?.();
     if (navigate && pageName) {
-      //fadeOut = true;
-      setTimeout(() => {
-        navigate(pageName);
-      }, 700);
+      const transitionDir = getTransitionDirection(direction);
+      navigate(pageName, transitionDir);
     }
   };
 

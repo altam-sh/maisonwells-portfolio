@@ -1,0 +1,156 @@
+/* PageTransitions.css */
+
+/* Exit animations */
+.slide-exit-left {
+  animation: slideExitLeft 1000ms forwards;
+}
+
+.slide-exit-right {
+  animation: slideExitRight 1000ms forwards;
+}
+
+.slide-exit-up {
+  animation: slideExitUp 1000ms forwards;
+}
+
+.slide-exit-down {
+  animation: slideExitDown 1000ms forwards;
+}
+
+/* Enter animations */
+.slide-enter-left {
+  animation: slideEnterLeft 1000ms forwards;
+}
+
+.slide-enter-right {
+  animation: slideEnterRight 1000ms forwards;
+}
+
+.slide-enter-up {
+  animation: slideEnterUp 1000ms forwards;
+}
+
+.slide-enter-down {
+  animation: slideEnterDown 1000ms forwards;
+}
+
+/* Default fade animations */
+.fade-exit {
+  animation: fadeOut 500ms forwards;
+}
+
+.fade-enter {
+  animation: fadeIn 500ms forwards;
+}
+
+.none {
+  animation: none;
+}
+
+/* Keyframes for exit animations */
+@keyframes slideExitLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideExitRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideExitUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideExitDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* Keyframes for enter animations */
+@keyframes slideEnterLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideEnterRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideEnterUp {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideEnterDown {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

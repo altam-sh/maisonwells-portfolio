@@ -50,7 +50,7 @@ const MainMenu: FC<PageProps> = ({ navigate }) => {
       <div className="flex items-center justify-center py-2 z-10">
         <img
           className="mb-1 w-[14vw] h-auto transition-all duration-1000"
-          src="../public/images/wishingwell.png"
+          src="../images/wishingwell.png"
           alt="Wishing Well"
           style={{
             transform: `scale(${pictureScale})`,
@@ -74,18 +74,50 @@ const MainMenu: FC<PageProps> = ({ navigate }) => {
             setFadeIn(false);
             setFadeOutArrows(true);
             setTimeout(() => {
-              navigate('home');
-            }, 1000);
+              navigate('home', 'none');
+            }, 700);
           }}
         >
           [welcome home]
         </button>
       </div>
       <div className="absolute w-screen h-screen bg-transparent">
-        <ArrowButton direction="top" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="interests" onClickStart={() => setFadeOutArrows(true)} />
-        <ArrowButton direction="bottom" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="gallery" onClickStart={() => setFadeOutArrows(true)} />
-        <ArrowButton direction="left" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="about" onClickStart={() => setFadeOutArrows(true)}/>
-        <ArrowButton direction="right" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="projects" onClickStart={() => setFadeOutArrows(true)}/>
+        <ArrowButton 
+          direction="top" 
+          svgPath="/images/arrow.svg" 
+          fadeOut={fadeOutArrows} 
+          onHoverChange={setHoveredDirection} 
+          navigate={navigate} 
+          pageName="interests" 
+          onClickStart={() => setFadeOutArrows(true)} 
+        />
+        <ArrowButton 
+          direction="bottom" 
+          svgPath="/images/arrow.svg" 
+          fadeOut={fadeOutArrows} 
+          onHoverChange={setHoveredDirection} 
+          navigate={navigate} 
+          pageName="gallery" 
+          onClickStart={() => setFadeOutArrows(true)} 
+        />
+        <ArrowButton 
+          direction="left" 
+          svgPath="/images/arrow.svg" 
+          fadeOut={fadeOutArrows} 
+          onHoverChange={setHoveredDirection} 
+          navigate={navigate} 
+          pageName="about" 
+          onClickStart={() => setFadeOutArrows(true)}
+        />
+        <ArrowButton 
+          direction="right" 
+          svgPath="/images/arrow.svg" 
+          fadeOut={fadeOutArrows} 
+          onHoverChange={setHoveredDirection} 
+          navigate={navigate} 
+          pageName="projects" 
+          onClickStart={() => setFadeOutArrows(true)}
+        />
       </div>
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div
