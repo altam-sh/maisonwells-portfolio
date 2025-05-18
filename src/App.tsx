@@ -1,27 +1,14 @@
-// import React from "react";
-// import WishingWell from "./components/WishingWell";
-// import RippleEffect from "./components/WellWaterRipple";
-// import './index.css'
-
-// const App: React.FC = () => {
-//     return (
-//         <div className="flex items-center justify-center min-h-screen bg-black">
-//             <WishingWell />
-//             <RippleEffect />
-//         </div>
-//     );
-// };
-
-// export default App;
-
 import { useState, useEffect } from 'react';
 import HomePage from './pages/HomePage';
 import MainMenu from './pages/MainMenu';
 import AboutMe from './pages/AboutMe';
+import Projects from './pages/ProfessionalProfile';
+import Interests from './pages/PersonalInterests';
+import Gallery from './pages/Gallery';
 import RippleEffect from './components/RippleEffect';
 import RainEffect from './components/RainEffect';
 
-type Page = 'home' | 'mainmenu' | 'about';
+type Page = 'home' | 'mainmenu' | 'about' | 'projects'|  'interests' | 'gallery';
 
 interface PageProps {
   navigate: (page: Page) => void;
@@ -47,6 +34,9 @@ function App() {
         {currentPage === 'home' && <HomePage navigate={navigate} />}
         {currentPage === 'mainmenu' && <MainMenu navigate={navigate} />}
         {currentPage === 'about' && <AboutMe navigate={navigate} />}
+        {currentPage === 'projects' && <Projects navigate={navigate} />}
+        {currentPage === 'interests' && <Interests navigate={navigate} />}
+        {currentPage === 'gallery' && <Gallery navigate={navigate} />}
       </div>
     </div>
   );

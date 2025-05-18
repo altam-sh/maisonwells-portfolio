@@ -11,6 +11,7 @@ interface ArrowButtonProps {
   fadeOut?: boolean;
   navigate?: (page: Page) => void;
   pageName?: Page;
+  onClickStart?: () => void;
 }
 
 const ArrowButton: FC<ArrowButtonProps> = ({
@@ -20,10 +21,14 @@ const ArrowButton: FC<ArrowButtonProps> = ({
   fadeOut = false,
   navigate,
   pageName,
+  onClickStart,
 }) => {
   const [visible, setVisible] = useState<boolean>(false);
+
   const handleClick = () => {
+    onClickStart?.(); 
     if (navigate && pageName) {
+      //fadeOut = true;
       setTimeout(() => {
         navigate(pageName);
       }, 700);

@@ -82,10 +82,10 @@ const MainMenu: FC<PageProps> = ({ navigate }) => {
         </button>
       </div>
       <div className="absolute w-screen h-screen bg-transparent">
-        <ArrowButton direction="top" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="about" />
-        <ArrowButton direction="bottom" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="about" />
-        <ArrowButton direction="left" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="about" />
-        <ArrowButton direction="right" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="about" />
+        <ArrowButton direction="top" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="interests" onClickStart={() => setFadeOutArrows(true)} />
+        <ArrowButton direction="bottom" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="gallery" onClickStart={() => setFadeOutArrows(true)} />
+        <ArrowButton direction="left" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="about" onClickStart={() => setFadeOutArrows(true)}/>
+        <ArrowButton direction="right" svgPath="/images/arrow.svg" fadeOut={fadeOutArrows} onHoverChange={setHoveredDirection} navigate={navigate} pageName="projects" onClickStart={() => setFadeOutArrows(true)}/>
       </div>
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div
