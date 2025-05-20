@@ -95,10 +95,10 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-black text-white font-serif px-4 md:px-8 lg:px-16 py-8 overflow-y-auto">
+    <div className="flex flex-col h-screen bg-black text-white font-serif overflow-hidden">
       {/* Header - Fixed at the top */}
       <div
-        className="mb-16 transition-opacity duration-1000 sticky top-0 bg-black z-10 pt-8 pb-4"
+        className="px-4 md:px-8 lg:px-16 py-8 transition-opacity duration-1000 bg-black z-10"
         style={{ opacity: fadeIn ? 1 : 0 }}
       >
         <h1 className="text-5xl md:text-6xl mb-4 font-serif">Professional Profile</h1>
@@ -128,84 +128,86 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
       </div>
 
       {/* Content - Scrollable */}
-      <div
-        className="flex-grow transition-opacity duration-1000 delay-300"
-        style={{ opacity: fadeIn ? 1 : 0 }}
-      >
-        {/* Projects Section */}
-        {currentSection === 'projects' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project) => (
-              <div 
-                key={project.id} 
-                className="border border-white p-6 transition-all duration-300 cursor-pointer group relative"
-                onClick={() => openModal(project.id)}
-              >
-                <div className="relative aspect-video mb-4 overflow-hidden">
-                  <img 
-                    src={project.thumbnail} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="text-2xl mb-2">{project.title}</h3>
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {project.tags.map((tag, index) => (
-                    <span key={index} className="text-xs px-2 py-1 border border-white text-white">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-300 text-sm">{project.description}</p>
-                
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 flex items-center justify-center"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                    [view more]
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Experience Section */}
-        {currentSection === 'experience' && (
-          <div className="space-y-12">
-            {workExperience.map((job, index) => (
-              <div key={index} className="border-l-2 border-white pl-6 relative">
-                <div className="absolute -left-2 top-0 w-4 h-4 bg-white"></div>
-                <h3 className="text-2xl">{job.company}</h3>
-                <div className="flex justify-between mb-2">
-                  <span className="text-xl text-gray-300">{job.role}</span>
-                  <span className="text-gray-400">{job.period}</span>
-                </div>
-                <p className="text-gray-300">{job.description}</p>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* Footer */}
-      <div
-        className="mt-16 transition-opacity duration-1000 delay-500"
-        style={{ opacity: fadeIn ? 1 : 0 }}
-      >
-        <div className="h-px w-full bg-white opacity-50 mb-8"></div>
-        <button
-          className="px-6 py-3 border border-white bg-transparent hover:text-gray-400 hover:-translate-y-1 transition-all duration-300"
-          onClick={() => navigate('mainmenu', 'right')}
+      <div className="flex-1 overflow-y-auto px-4 md:px-8 lg:px-16 pb-8">
+        <div
+          className="transition-opacity duration-1000 delay-300"
+          style={{ opacity: fadeIn ? 1 : 0 }}
         >
-          Return Home
-        </button>
+          {/* Projects Section */}
+          {currentSection === 'projects' && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {projects.map((project) => (
+                <div 
+                  key={project.id} 
+                  className="border border-white p-6 transition-all duration-300 cursor-pointer group relative"
+                  onClick={() => openModal(project.id)}
+                >
+                  <div className="relative aspect-video mb-4 overflow-hidden">
+                    <img 
+                      src={project.thumbnail} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <h3 className="text-2xl mb-2">{project.title}</h3>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {project.tags.map((tag, index) => (
+                      <span key={index} className="text-s px-2 py-1 border border-white text-white">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-gray-300 text-m">{project.description}</p>
+                  
+                  {/* Overlay on hover */}
+                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 flex items-center justify-center"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                      [view more]
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Experience Section */}
+          {currentSection === 'experience' && (
+            <div className="space-y-12">
+              {workExperience.map((job, index) => (
+                <div key={index} className="border-l-2 border-white pl-6 relative">
+                  <div className="absolute -left-2 top-0 w-4 h-4 bg-white"></div>
+                  <h3 className="text-2xl">{job.company}</h3>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-xl text-gray-300">{job.role}</span>
+                    <span className="text-gray-400">{job.period}</span>
+                  </div>
+                  <p className="text-gray-300">{job.description}</p>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {/* Footer */}
+          <div
+            className="mt-16 transition-opacity duration-1000 delay-500"
+            style={{ opacity: fadeIn ? 1 : 0 }}
+          >
+            <div className="h-px w-full bg-white opacity-50 mb-8"></div>
+            <button
+              className="px-6 py-3 border border-white bg-transparent hover:text-purple-400 hover:-translate-y-1 transition-all duration-300"
+              onClick={() => navigate('mainmenu', 'right')}
+            >
+              Return Home
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Project Detail Modal */}
       {selectedProject !== null && (
         <div 
-          className={`fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-opacity duration-300 ${modalOpen ? 'opacity-100' : 'opacity-0'}`}
+          className={`fixed inset-0 bg-black/60 bg-opacity-70 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-opacity duration-300 ${modalOpen ? 'opacity-100' : 'opacity-0'}`}
           onClick={closeModal}
         >
           <div 
@@ -225,7 +227,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                   <h2 className="text-3xl md:text-4xl mb-2">{getSelectedProject()?.title}</h2>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {getSelectedProject()?.tags.map((tag, index) => (
-                      <span key={index} className="text-xs px-2 py-1 border border-white text-white">
+                      <span key={index} className="text-s px-2 py-1 border border-white text-white">
                         {tag}
                       </span>
                     ))}
