@@ -105,13 +105,21 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
         <div className="h-px w-full bg-white opacity-50 mb-8"></div>
         <div className="flex space-x-6">
           <button
-            className={`text-lg uppercase tracking-wider ${currentSection === 'projects' ? 'text-white' : 'text-gray-500'}`}
+            className={`text-lg uppercase tracking-wider duration-300 ${
+              currentSection === 'projects'
+                ? 'text-white'
+                : 'text-gray-500 hover:text-purple-400'
+            }`}
             onClick={() => setCurrentSection('projects')}
           >
             Projects
           </button>
           <button
-            className={`text-lg uppercase tracking-wider ${currentSection === 'experience' ? 'text-white' : 'text-gray-500'}`}
+            className={`text-lg uppercase tracking-wider duration-300 ${
+              currentSection === 'experience'
+                ? 'text-white'
+                : 'text-gray-500 hover:text-purple-400'
+            }`}
             onClick={() => setCurrentSection('experience')}
           >
             Experience
