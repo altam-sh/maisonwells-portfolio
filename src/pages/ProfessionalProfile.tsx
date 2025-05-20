@@ -95,7 +95,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-black text-white font-serif px-4 md:px-8 lg:px-16 py-8 overflow-y-auto h-100%">
+    <div className="flex flex-col min-h-screen bg-black text-white font-serif px-4 md:px-8 lg:px-16 py-8 overflow-y-auto">
       {/* Header - Fixed at the top */}
       <div
         className="mb-16 transition-opacity duration-1000 sticky top-0 bg-black z-10 pt-8 pb-4"
@@ -161,7 +161,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                 {/* Overlay on hover */}
                 <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 flex items-center justify-center"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-purple-400 text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                  <span className="text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                     [view more]
                   </span>
                 </div>
@@ -213,7 +213,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
             onClick={(e) => e.stopPropagation()}
           >
             <button 
-              className="sticky top-4 float-right text-white hover:text-gray-300 z-10"
+              className="sticky top-2 float-right text-white hover:text-purple-400 z-10"
               onClick={closeModal}
             >
               <X size={24} />
@@ -270,7 +270,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                     href={getSelectedProject()?.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center px-4 py-2 border border-white hover:bg-white hover:bg-opacity-10 transition-colors duration-300"
+                    className="flex items-center px-4 py-2 border border-white hover:bg-purple-400 hover:bg-opacity-10 transition-colors duration-300"
                   >
                     <ExternalLink size={16} className="mr-2" />
                     Live Demo
@@ -279,7 +279,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                     href={getSelectedProject()?.github} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center px-4 py-2 border border-white hover:bg-white hover:bg-opacity-10 transition-colors duration-300"
+                    className="flex items-center px-4 py-2 border border-white hover:bg-purple-400 hover:bg-opacity-10 transition-colors duration-300"
                   >
                     <Github size={16} className="mr-2" />
                     View Code
