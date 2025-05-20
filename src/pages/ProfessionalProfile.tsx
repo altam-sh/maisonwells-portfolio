@@ -95,10 +95,10 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-black text-white font-serif px-4 md:px-8 lg:px-16 py-8">
-      {/* Header */}
+    <div className="flex flex-col min-h-screen bg-black text-white font-serif px-4 md:px-8 lg:px-16 py-8 overflow-y-auto h-100%">
+      {/* Header - Fixed at the top */}
       <div
-        className="mb-16 transition-opacity duration-1000"
+        className="mb-16 transition-opacity duration-1000 sticky top-0 bg-black z-10 pt-8 pb-4"
         style={{ opacity: fadeIn ? 1 : 0 }}
       >
         <h1 className="text-5xl md:text-6xl mb-4 font-serif">Professional Profile</h1>
@@ -119,7 +119,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
         </div>
       </div>
 
-      {/* Content */}
+      {/* Content - Scrollable */}
       <div
         className="flex-grow transition-opacity duration-1000 delay-300"
         style={{ opacity: fadeIn ? 1 : 0 }}
@@ -130,14 +130,14 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
             {projects.map((project) => (
               <div 
                 key={project.id} 
-                className="border border-white p-6 hover:bg-purple-500 hover:bg-opacity-50 transition-all duration-300 cursor-pointer"
+                className="border border-white p-6 transition-all duration-300 cursor-pointer group relative"
                 onClick={() => openModal(project.id)}
               >
                 <div className="relative aspect-video mb-4 overflow-hidden">
                   <img 
                     src={project.thumbnail} 
                     alt={project.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <h3 className="text-2xl mb-2">{project.title}</h3>
@@ -149,6 +149,14 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                   ))}
                 </div>
                 <p className="text-gray-300 text-sm">{project.description}</p>
+                
+                {/* Overlay on hover */}
+                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 flex items-center justify-center"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-purple-400 text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                    [view more]
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -189,23 +197,23 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
       {/* Project Detail Modal */}
       {selectedProject !== null && (
         <div 
-          className={`fixed inset-0 bg-black bg-opacity-10 z-50 flex items-center justify-center p-4 transition-opacity duration-300 ${modalOpen ? 'opacity-100' : 'opacity-0'}`}
+          className={`fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-opacity duration-300 ${modalOpen ? 'opacity-100' : 'opacity-0'}`}
           onClick={closeModal}
         >
           <div 
-            className="max-w-4xl w-full max-h-screen overflow-y-auto bg-black border border-white p-8 relative"
+            className="max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-black bg-opacity-90 border border-white p-8 relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button 
-              className="absolute top-4 right-4 text-white hover:text-gray-300"
+              className="sticky top-4 float-right text-white hover:text-gray-300 z-10"
               onClick={closeModal}
             >
               <X size={24} />
             </button>
 
             {getSelectedProject() && (
-              <>
-                <div className="mb-6">
+              <div className="modal-content space-y-8">
+                <div>
                   <h2 className="text-3xl md:text-4xl mb-2">{getSelectedProject()?.title}</h2>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {getSelectedProject()?.tags.map((tag, index) => (
@@ -216,7 +224,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                   </div>
                 </div>
 
-                <div className="relative aspect-video mb-6 overflow-hidden">
+                <div className="relative aspect-video overflow-hidden">
                   <img 
                     src={getSelectedProject()?.thumbnail} 
                     alt={getSelectedProject()?.title} 
@@ -224,12 +232,32 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                   />
                 </div>
 
-                <div className="mb-6">
+                <div>
                   <h3 className="text-xl mb-2">Overview</h3>
                   <p className="text-gray-300 mb-4">{getSelectedProject()?.longDescription}</p>
+                  
+                  {/* Additional content for detailed view */}
+                  <div className="mt-8">
+                    <h3 className="text-xl mb-2">Technical Details</h3>
+                    <p className="text-gray-300 mb-4">
+                      This section can contain in-depth technical explanations about how the project was built,
+                      challenges faced, and solutions implemented. You can include code snippets, architecture
+                      diagrams, or any other technical details relevant to the project.
+                    </p>
+                  </div>
+                  
+                  <div className="mt-8">
+                    <h3 className="text-xl mb-2">Gallery</h3>
+                    <div className="grid grid-cols-2 gap-4 mt-4">
+                      <img src="/api/placeholder/400/300" alt="Additional screenshot" className="w-full h-full object-cover" />
+                      <img src="/api/placeholder/400/300" alt="Additional screenshot" className="w-full h-full object-cover" />
+                      <img src="/api/placeholder/400/300" alt="Additional screenshot" className="w-full h-full object-cover" />
+                      <img src="/api/placeholder/400/300" alt="Additional screenshot" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
                 </div>
 
-                <div className="flex space-x-4">
+                <div className="flex space-x-4 pt-4">
                   <a 
                     href={getSelectedProject()?.link} 
                     target="_blank" 
@@ -249,7 +277,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                     View Code
                   </a>
                 </div>
-              </>
+              </div>
             )}
           </div>
         </div>
