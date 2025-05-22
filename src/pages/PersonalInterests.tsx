@@ -35,7 +35,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       hobby: "Music Production & Composition",
       description: "Crafting sonic landscapes through digital orchestration",
       duration: "∞",
-      image: "/api/placeholder/400/400",
+      image: "/public/images/placeholder3.jpg",
       color: "#ff6b6b",
       details: [
         "Digital Audio Workstation mastery",
@@ -147,7 +147,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
   const currentTrackData = tracks[currentTrack];
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-black text-white p-4">
+    <div className="min-h-screen bg-black text-white p-4 py-8">
       {/* Header */}
       <div
         className="text-3xl mb-8 transition-opacity duration-1000 font-serif text-center"
@@ -158,162 +158,173 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
 
       {/* Main Player Interface */}
       <div
-        className="w-full max-w-md transition-all duration-1000 delay-300"
+        className="w-full max-w-6xl mx-auto transition-all duration-1000 delay-300"
         style={{ 
           opacity: fadeIn ? 1 : 0,
           transform: `translateY(${fadeIn ? 0 : 20}px)`
         }}
       >
-        {/* Album Art & Info */}
-        <div className="relative mb-6">
-          <div 
-            className="w-full aspect-square rounded-lg overflow-hidden shadow-2xl border-4 transition-all duration-500"
-            style={{ borderColor: currentTrackData.color }}
-          >
-            <img
-              src={currentTrackData.image}
-              alt={currentTrackData.hobby}
-              className="w-full h-full object-cover"
-              style={{
-                filter: isPlaying ? 'brightness(1.1) saturate(1.2)' : 'brightness(0.8)',
-                transition: 'filter 0.3s ease'
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-          </div>
-          
-          {/* Track Info Overlay */}
-          <div className="absolute bottom-4 left-4 right-4">
-            <h2 className="text-2xl font-serif font-bold mb-1 text-white drop-shadow-lg">
-              {currentTrackData.title}
-            </h2>
-            <p className="text-sm opacity-90 mb-1 drop-shadow">
-              {currentTrackData.artist}
-            </p>
-            <p className="text-xs opacity-75 drop-shadow">
-              {currentTrackData.hobby}
-            </p>
-          </div>
-        </div>
-
-        {/* Progress Bar */}
-        <div className="mb-6">
-          <div className="flex justify-between text-xs mb-2 font-mono">
-            <span>{Math.floor(progress / 4)}:{'0'.repeat(2 - Math.floor((progress % 4) * 15).toString().length)}{Math.floor((progress % 4) * 15)}</span>
-            <span>{currentTrackData.duration}</span>
-          </div>
-          <div className="w-full h-1 bg-gray-700 rounded-full overflow-hidden">
-            <div
-              className="h-full transition-all duration-100 rounded-full"
-              style={{
-                width: `${progress}%`,
-                backgroundColor: currentTrackData.color,
-                boxShadow: `0 0 10px ${currentTrackData.color}40`
-              }}
-            ></div>
-          </div>
-        </div>
-
-        {/* Controls */}
-        <div className="flex items-center justify-between mb-6">
-          <button
-            onClick={handlePrevious}
-            className="p-3 hover:bg-gray-800 rounded-full transition-colors duration-200"
-          >
-            <SkipBack size={24} />
-          </button>
-          
-          <button
-            onClick={handlePlayPause}
-            className="p-4 rounded-full transition-all duration-200 border-2"
-            style={{
-              backgroundColor: isPlaying ? currentTrackData.color : 'transparent',
-              borderColor: currentTrackData.color,
-              boxShadow: isPlaying ? `0 0 20px ${currentTrackData.color}40` : 'none'
-            }}
-          >
-            {isPlaying ? <Pause size={28} /> : <Play size={28} />}
-          </button>
-          
-          <button
-            onClick={handleNext}
-            className="p-3 hover:bg-gray-800 rounded-full transition-colors duration-200"
-          >
-            <SkipForward size={24} />
-          </button>
-        </div>
-
-        {/* Volume Control */}
-        <div className="flex items-center gap-3 mb-6">
-          <button
-            onClick={handleMute}
-            className="p-2 hover:bg-gray-800 rounded-full transition-colors duration-200"
-          >
-            {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-          </button>
-          <div className="flex-1 h-1 bg-gray-700 rounded-full overflow-hidden">
-            <div
-              className="h-full rounded-full transition-all duration-200"
-              style={{
-                width: isMuted ? '0%' : `${volume * 100}%`,
-                backgroundColor: currentTrackData.color
-              }}
-            ></div>
-          </div>
-        </div>
-
-        {/* Track Description */}
-        <div className="mb-6 p-4 rounded-lg bg-gray-900 border-l-4" style={{ borderColor: currentTrackData.color }}>
-          <p className="text-sm mb-3 italic font-serif">{currentTrackData.description}</p>
-          <div className="space-y-1">
-            {currentTrackData.details.map((detail, index) => (
-              <div key={index} className="text-xs opacity-75 flex items-center gap-2">
-                <div 
-                  className="w-1 h-1 rounded-full"
-                  style={{ backgroundColor: currentTrackData.color }}
-                ></div>
-                {detail}
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          {/* Left Column - Player Controls */}
+          <div className="w-full lg:w-96 lg:flex-shrink-0">
+            {/* Album Art & Info */}
+            <div className="relative mb-6">
+              <div 
+                className="w-full aspect-square rounded-lg overflow-hidden shadow-2xl border-4 transition-all duration-500"
+                style={{ borderColor: currentTrackData.color }}
+              >
+                <img
+                  src={currentTrackData.image}
+                  alt={currentTrackData.hobby}
+                  className="w-full h-full object-cover"
+                  style={{
+                    filter: isPlaying ? 'brightness(1.1) saturate(1.2)' : 'brightness(0.8)',
+                    transition: 'filter 0.3s ease'
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
               </div>
-            ))}
-          </div>
-        </div>
+              
+              {/* Track Info Overlay */}
+              <div className="absolute bottom-4 left-4 right-4">
+                <h2 className="text-2xl font-serif font-bold mb-1 text-white drop-shadow-lg">
+                  {currentTrackData.title}
+                </h2>
+                <p className="text-sm opacity-90 mb-1 drop-shadow">
+                  {currentTrackData.artist}
+                </p>
+                <p className="text-xs opacity-75 drop-shadow">
+                  {currentTrackData.hobby}
+                </p>
+              </div>
+            </div>
 
-        {/* Track List Preview */}
-        <div className="mb-8">
-          <h3 className="text-sm font-serif mb-3 opacity-75">Up Next:</h3>
-          <div className="space-y-2">
-            {tracks.map((track, index) => (
+            {/* Progress Bar */}
+            <div className="mb-6">
+              <div className="flex justify-between text-xs mb-2 font-mono">
+                <span>{Math.floor(progress / 4)}:{'0'.repeat(2 - Math.floor((progress % 4) * 15).toString().length)}{Math.floor((progress % 4) * 15)}</span>
+                <span>{currentTrackData.duration}</span>
+              </div>
+              <div className="w-full h-1 bg-gray-700 rounded-full overflow-hidden">
+                <div
+                  className="h-full transition-all duration-100 rounded-full"
+                  style={{
+                    width: `${progress}%`,
+                    backgroundColor: currentTrackData.color,
+                    boxShadow: `0 0 10px ${currentTrackData.color}40`
+                  }}
+                ></div>
+              </div>
+            </div>
+
+            {/* Controls */}
+            <div className="flex items-center justify-between mb-6">
               <button
-                key={track.id}
-                onClick={() => {setCurrentTrack(index); setProgress(0);}}
-                className={`w-full p-2 rounded text-left transition-all duration-200 flex items-center gap-3 ${
-                  index === currentTrack 
-                    ? 'bg-gray-800 border-l-2' 
-                    : 'hover:bg-gray-900 opacity-60 hover:opacity-100'
-                }`}
+                onClick={handlePrevious}
+                className="p-3 hover:bg-gray-800 rounded-full transition-colors duration-200"
+              >
+                <SkipBack size={24} />
+              </button>
+              
+              <button
+                onClick={handlePlayPause}
+                className="p-4 rounded-full transition-all duration-200 border-2"
                 style={{
-                  borderColor: index === currentTrack ? currentTrackData.color : 'transparent'
+                  backgroundColor: isPlaying ? currentTrackData.color : 'transparent',
+                  borderColor: currentTrackData.color,
+                  boxShadow: isPlaying ? `0 0 20px ${currentTrackData.color}40` : 'none'
                 }}
               >
-                <div className="text-xs font-mono w-6">{String(index + 1).padStart(2, '0')}</div>
-                <div className="flex-1">
-                  <div className="text-sm font-serif">{track.title}</div>
-                  <div className="text-xs opacity-75">{track.hobby}</div>
-                </div>
-                <div className="text-xs font-mono opacity-50">{track.duration}</div>
+                {isPlaying ? <Pause size={28} /> : <Play size={28} />}
               </button>
-            ))}
+              
+              <button
+                onClick={handleNext}
+                className="p-3 hover:bg-gray-800 rounded-full transition-colors duration-200"
+              >
+                <SkipForward size={24} />
+              </button>
+            </div>
+
+            {/* Volume Control */}
+            <div className="flex items-center gap-3 mb-6">
+              <button
+                onClick={handleMute}
+                className="p-2 hover:bg-gray-800 rounded-full transition-colors duration-200"
+              >
+                {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+              </button>
+              <div className="flex-1 h-1 bg-gray-700 rounded-full overflow-hidden">
+                <div
+                  className="h-full rounded-full transition-all duration-200"
+                  style={{
+                    width: isMuted ? '0%' : `${volume * 100}%`,
+                    backgroundColor: currentTrackData.color
+                  }}
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Info & Track List */}
+          <div className="flex-1 lg:min-h-96">
+            {/* Track Description */}
+            <div className="mb-6 p-6 rounded-lg bg-gray-900 border-l-4" style={{ borderColor: currentTrackData.color }}>
+              <h3 className="text-xl font-serif font-bold mb-3" style={{ color: currentTrackData.color }}>
+                {currentTrackData.hobby}
+              </h3>
+              <p className="text-base mb-4 italic font-serif leading-relaxed">{currentTrackData.description}</p>
+              <div className="space-y-2">
+                {currentTrackData.details.map((detail, index) => (
+                  <div key={index} className="text-sm opacity-85 flex items-center gap-3">
+                    <div 
+                      className="w-2 h-2 rounded-full flex-shrink-0"
+                      style={{ backgroundColor: currentTrackData.color }}
+                    ></div>
+                    {detail}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Track List Preview */}
+            <div className="mb-8">
+              <h3 className="text-lg font-serif mb-4 opacity-75">Creative Portfolio:</h3>
+              <div className="space-y-2">
+                {tracks.map((track, index) => (
+                  <button
+                    key={track.id}
+                    onClick={() => {setCurrentTrack(index); setProgress(0);}}
+                    className={`w-full p-3 rounded text-left transition-all duration-200 flex items-center gap-4 ${
+                      index === currentTrack 
+                        ? 'bg-gray-800 border-l-4' 
+                        : 'hover:bg-gray-900 opacity-60 hover:opacity-100'
+                    }`}
+                    style={{
+                      borderColor: index === currentTrack ? currentTrackData.color : 'transparent'
+                    }}
+                  >
+                    <div className="text-sm font-mono w-8">{String(index + 1).padStart(2, '0')}</div>
+                    <div className="flex-1">
+                      <div className="text-base font-serif">{track.title}</div>
+                      <div className="text-sm opacity-75">{track.hobby}</div>
+                    </div>
+                    <div className="text-sm font-mono opacity-50">{track.duration}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation */}
+            <button
+              className="group relative px-8 py-4 border-2 border-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 font-serif overflow-hidden"
+              onClick={() => navigate('mainmenu', 'up')}
+            >
+              <span className="relative z-10">Return Home</span>
+              <div className="absolute inset-0 bg-white transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            </button>
           </div>
         </div>
-
-        {/* Navigation */}
-        <button
-          className="w-full px-6 py-3 border-2 border-white bg-transparent hover:text-gray-400 hover:-translate-y-1 transition-all duration-300 font-serif flex items-center justify-center gap-2"
-          onClick={() => navigate('mainmenu', 'up')}
-        >
-          <Home size={20} />
-          Return Home
-        </button>
       </div>
     </div>
   );
