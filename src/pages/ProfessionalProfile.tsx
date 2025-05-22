@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X, ExternalLink, Github } from 'lucide-react';
 import type { PageProps } from '../App';
-import ArrowButton from '../components/ArrowButton';
+//import ArrowButton from '../components/ArrowButton';
 
 const workExperience = [
   {
@@ -49,7 +49,7 @@ const projects = [
     id: 3,
     title: "E-Commerce Platform",
     tags: ["Next.js", "Tailwind CSS", "Stripe API"],
-    thumbnail: "public/images/placeholdersqr2.png",
+    thumbnail: "public/images/placeholder3.jpg",
     description: "A fully functional e-commerce platform with modern design, smooth animations, and secure payment processing.",
     longDescription: "This e-commerce solution features a clean, intuitive interface built with Next.js and Tailwind CSS. It includes product filtering, user accounts, shopping cart functionality, and secure checkout via Stripe. Performance optimizations ensure quick load times and smooth transitions between pages.",
     link: "https://example.com/ecommerce",
@@ -59,7 +59,7 @@ const projects = [
     id: 4,
     title: "Music Visualization Tool",
     tags: ["Three.js", "Web Audio API", "React"],
-    thumbnail: "/api/placeholder/600/400",
+    thumbnail: "public/images/placeholder4.png",
     description: "A 3D audio visualization tool that reacts to music in real-time, creating immersive visual experiences.",
     longDescription: "This project uses the Web Audio API to analyze audio frequencies and Three.js to render dynamic 3D visualizations that respond to music in real-time. Users can upload their own audio files or connect to streaming services. The visualizations adapt to different audio characteristics, creating unique visual patterns for each track.",
     link: "https://example.com/music-viz",
@@ -146,7 +146,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                     <img 
                       src={project.thumbnail} 
                       alt={project.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-1 transition-all duration-500 filter contrast-110"
                     />
                   </div>
                   <h3 className="text-2xl mb-2">{project.title}</h3>
@@ -195,10 +195,11 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
           >
             <div className="h-px w-full bg-white opacity-50 mb-8"></div>
             <button
-              className="px-6 py-3 border border-white bg-transparent hover:text-purple-400 hover:-translate-y-1 transition-all duration-300"
+              className="group relative px-8 py-4 border-2 border-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 font-serif overflow-hidden"
               onClick={() => navigate('mainmenu', 'right')}
             >
-              Return Home
+              <span className="relative z-10">Return Home</span>
+              <div className="absolute inset-0 bg-white transform translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
             </button>
             {/* <div className="relative -my-8 -mx-[2.5vw] py-20 flex justify-start">
               <div className="group flex items-center space-x-3 cursor-pointer">
