@@ -50,7 +50,7 @@ const WishingWell = () => {
                 </div>
                 
                 <button 
-                    className={`mt-8 px-6 py-2 text-xl border-2 border-white transition-all duration-1000 hover:text-purple-300 hover:-translate-y-1 hover:duration-[300ms] ${showButton ? "opacity-100" : "opacity-0"} font-serif`}
+                    className={`mt-8 px-6 py-2 text-xl border-2 border-white transition-all duration-1000 hover:text-purple-400 hover:-translate-y-1 hover:duration-[300ms] ${showButton ? "opacity-100" : "opacity-0"} font-serif`}
                     onClick={handleToss}
                 >
                     Make a Wish
