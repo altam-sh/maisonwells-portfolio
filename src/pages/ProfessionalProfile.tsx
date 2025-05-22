@@ -28,7 +28,7 @@ const projects = [
     id: 1,
     title: "Algorithmic Art Generator",
     tags: ["React", "Canvas API", "TypeScript"],
-    thumbnail: "/api/placeholder/600/400",
+    thumbnail: "public/images/placeholder.jpg",
     description: "A creative coding project that generates unique algorithmic art pieces based on user input and randomization.",
     longDescription: "This application leverages mathematical algorithms to create unique visual compositions. Users can adjust parameters to influence the generative process, resulting in one-of-a-kind digital artworks. The project explores the intersection of code and creativity, using React for the interface and Canvas API for rendering graphics.",
     link: "https://example.com/art-generator",
