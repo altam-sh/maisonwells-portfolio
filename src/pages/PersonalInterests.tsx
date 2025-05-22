@@ -12,6 +12,7 @@ interface Track {
   hobby: string;
   description: string;
   duration: string;
+  durationSeconds: number;
   image: string;
   audioUrl?: string;
   color: string;
@@ -24,7 +25,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isMuted, setIsMuted] = useState<boolean>(false);
   const [volume, setVolume] = useState<number>(0.7);
-  const [progress, setProgress] = useState<number>(0);
+  const [currentTime, setCurrentTime] = useState<number>(0);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const tracks: Track[] = [
@@ -34,7 +35,8 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       artist: "Creative Process",
       hobby: "Music Production & Composition",
       description: "Crafting sonic landscapes through digital orchestration",
-      duration: "2:29",
+      duration: "2:49",
+      durationSeconds: 169,
       image: "/public/images/placeholder3.jpg",
       color: "#ff6b6b",
       details: [
@@ -50,7 +52,8 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       artist: "Physical Expression",
       hobby: "Instrument Playing",
       description: "Translating emotion through tactile musicality",
-      duration: "∞",
+      duration: "5:00",
+      durationSeconds: 300,
       image: "/api/placeholder/400/400",
       color: "#4ecdc4",
       details: [
@@ -66,7 +69,8 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       artist: "Wearable Art",
       hobby: "Clothing Design",
       description: "Engineering identity through textile innovation",
-      duration: "∞",
+      duration: "3:42",
+      durationSeconds: 222, 
       image: "/api/placeholder/400/400",
       color: "#45b7d1",
       details: [
@@ -82,7 +86,8 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       artist: "Visual Narratives",
       hobby: "Drawing & Digital Art",
       description: "Bridging analog intuition with digital precision",
-      duration: "∞",
+      duration: "3:04",
+      durationSeconds: 184, 
       image: "/api/placeholder/400/400",
       color: "#f7b801",
       details: [
@@ -98,7 +103,8 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       artist: "Cinematic Vision",
       hobby: "Filmmaking",
       description: "Capturing stories through the language of light",
-      duration: "∞",
+      duration: "5:33",
+      durationSeconds: 333,
       image: "/api/placeholder/400/400",
       color: "#6a4c93",
       details: [
@@ -119,12 +125,22 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (isPlaying && !isMuted) {
-        setProgress((prev) => (prev + 1) % 100);
+        setCurrentTime((prevTime) => {
+          const newTime = prevTime + 1;
+          if (newTime >= tracks[currentTrack].durationSeconds) {
+            return 0;
+          }
+          return newTime;
+        });
       }
-    }, 100);
+    }, 1000);
 
     return () => clearInterval(interval);
-  }, [isPlaying, isMuted]);
+  }, [isPlaying, isMuted, currentTrack]);
+
+  useEffect(() => {
+    setCurrentTime(0);
+  }, [currentTrack]);
 
   const handlePlayPause = () => {
     setIsPlaying(!isPlaying);
@@ -132,12 +148,12 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
 
   const handlePrevious = () => {
     setCurrentTrack((prev) => (prev - 1 + tracks.length) % tracks.length);
-    setProgress(0);
+    setCurrentTime(0);
   };
 
   const handleNext = () => {
     setCurrentTrack((prev) => (prev + 1) % tracks.length);
-    setProgress(0);
+    setCurrentTime(0);
   };
 
   const handleMute = () => {
@@ -145,6 +161,14 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
   };
 
   const currentTrackData = tracks[currentTrack];
+
+  const progressPercentage = (currentTime / currentTrackData.durationSeconds) * 100;
+
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+  };
 
   return (
     <div className="min-h-screen bg-black text-white p-4 py-8">
@@ -202,14 +226,14 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
             {/* Progress Bar */}
             <div className="mb-6">
               <div className="flex justify-between text-xs mb-2 font-mono">
-                <span>  {String(Math.floor(progress / 60)).padStart(1, '0')}:{String(Math.floor(progress % 60)).padStart(2, '0')}</span>
+                <span>{formatTime(currentTime)}</span>
                 <span>{currentTrackData.duration}</span>
               </div>
               <div className="w-full h-1 bg-white/15 rounded-full overflow-hidden">
                 <div
                   className="h-full transition-all duration-100 rounded-full"
                   style={{
-                    width: `${progress}%`,
+                    width: `${progressPercentage}%`,
                     backgroundColor: currentTrackData.color,
                     boxShadow: `0 0 10px ${currentTrackData.color}40`
                   }}
@@ -294,7 +318,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
                 {tracks.map((track, index) => (
                   <button
                     key={track.id}
-                    onClick={() => {setCurrentTrack(index); setProgress(0);}}
+                    onClick={() => {setCurrentTrack(index); setCurrentTime(0);}}
                     className={`w-full p-3 rounded text-left transition-all duration-200 flex items-center gap-4 ${
                       index === currentTrack 
                         ? 'bg-white/20 border-l-4' 
