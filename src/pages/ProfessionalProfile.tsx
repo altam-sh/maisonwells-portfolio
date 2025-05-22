@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X, ExternalLink, Github } from 'lucide-react';
 import type { PageProps } from '../App';
+import ArrowButton from '../components/ArrowButton';
 
 const workExperience = [
   {
@@ -38,7 +39,7 @@ const projects = [
     id: 2,
     title: "Interactive Data Visualization",
     tags: ["D3.js", "React", "Firebase"],
-    thumbnail: "/api/placeholder/600/400",
+    thumbnail: "public/images/placeholder2.png",
     description: "A dashboard that transforms complex datasets into interactive, visually compelling representations.",
     longDescription: "This data visualization project makes complex information accessible through interactive charts and graphs. Built with D3.js and React, it features real-time updates via Firebase, custom animations, and responsive design for all device sizes. The visualization techniques range from standard bar charts to more experimental representations.",
     link: "https://example.com/data-viz",
@@ -48,7 +49,7 @@ const projects = [
     id: 3,
     title: "E-Commerce Platform",
     tags: ["Next.js", "Tailwind CSS", "Stripe API"],
-    thumbnail: "/api/placeholder/600/400",
+    thumbnail: "public/images/placeholdersqr2.png",
     description: "A fully functional e-commerce platform with modern design, smooth animations, and secure payment processing.",
     longDescription: "This e-commerce solution features a clean, intuitive interface built with Next.js and Tailwind CSS. It includes product filtering, user accounts, shopping cart functionality, and secure checkout via Stripe. Performance optimizations ensure quick load times and smooth transitions between pages.",
     link: "https://example.com/ecommerce",
@@ -160,10 +161,10 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                   <p className="text-gray-300 text-m">{project.description}</p>
                   
                   {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 flex items-center justify-center"></div>
+                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-center justify-center"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                      [view more]
+                    <span className="text-white text-4xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                      [view details]
                     </span>
                   </div>
                 </div>
@@ -200,6 +201,15 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
             >
               Return Home
             </button>
+            <div className="flex justify-between items-center mt-8">
+              <ArrowButton 
+              direction="left" 
+              svgPath="/images/arrow.svg" 
+              fadeOut={false} 
+              navigate={navigate} 
+              pageName="mainmenu" 
+            />
+            </div>
           </div>
         </div>
       </div>
