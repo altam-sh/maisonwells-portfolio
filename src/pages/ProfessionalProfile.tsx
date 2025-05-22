@@ -136,11 +136,11 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
         >
           {/* Projects Section */}
           {currentSection === 'projects' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project) => (
                 <div 
                   key={project.id} 
-                  className="border border-white p-6 transition-all duration-300 cursor-pointer group relative"
+                  className="border border-white hover:border-purple-400 p-6 transition-all duration-300 cursor-pointer group relative"
                   onClick={() => openModal(project.id)}
                 >
                   <div className="relative aspect-video mb-4 overflow-hidden">
