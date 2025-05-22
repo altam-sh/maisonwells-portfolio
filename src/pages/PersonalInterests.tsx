@@ -34,7 +34,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       artist: "Creative Process",
       hobby: "Music Production & Composition",
       description: "Crafting sonic landscapes through digital orchestration",
-      duration: "∞",
+      duration: "2:29",
       image: "/public/images/placeholder3.jpg",
       color: "#ff6b6b",
       details: [
@@ -202,10 +202,10 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
             {/* Progress Bar */}
             <div className="mb-6">
               <div className="flex justify-between text-xs mb-2 font-mono">
-                <span>{Math.floor(progress / 4)}:{'0'.repeat(2 - Math.floor((progress % 4) * 15).toString().length)}{Math.floor((progress % 4) * 15)}</span>
+                <span>  {String(Math.floor(progress / 60)).padStart(1, '0')}:{String(Math.floor(progress % 60)).padStart(2, '0')}</span>
                 <span>{currentTrackData.duration}</span>
               </div>
-              <div className="w-full h-1 bg-gray-700 rounded-full overflow-hidden">
+              <div className="w-full h-1 bg-white/15 rounded-full overflow-hidden">
                 <div
                   className="h-full transition-all duration-100 rounded-full"
                   style={{
@@ -221,7 +221,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
             <div className="flex items-center justify-between mb-6">
               <button
                 onClick={handlePrevious}
-                className="p-3 hover:bg-gray-800 rounded-full transition-colors duration-200"
+                className="p-3 hover:bg-white/20 rounded-full transition-colors duration-200"
               >
                 <SkipBack size={24} />
               </button>
@@ -240,7 +240,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
               
               <button
                 onClick={handleNext}
-                className="p-3 hover:bg-gray-800 rounded-full transition-colors duration-200"
+                className="p-3 hover:bg-white/20 rounded-full transition-colors duration-200"
               >
                 <SkipForward size={24} />
               </button>
@@ -250,11 +250,11 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
             <div className="flex items-center gap-3 mb-6">
               <button
                 onClick={handleMute}
-                className="p-2 hover:bg-gray-800 rounded-full transition-colors duration-200"
+                className="p-2 hover:bg-white/20 rounded-full transition-colors duration-200"
               >
                 {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
               </button>
-              <div className="flex-1 h-1 bg-gray-700 rounded-full overflow-hidden">
+              <div className="flex-1 h-1 bg-white/15 rounded-full overflow-hidden">
                 <div
                   className="h-full rounded-full transition-all duration-200"
                   style={{
@@ -269,7 +269,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
           {/* Right Column - Info & Track List */}
           <div className="flex-1 lg:min-h-96">
             {/* Track Description */}
-            <div className="mb-6 p-6 rounded-md bg-gray-900 border-l-4" style={{ borderColor: currentTrackData.color }}>
+            <div className="mb-6 p-6 rounded-md bg-white/10 border-l-4" style={{ borderColor: currentTrackData.color }}>
               <h3 className="text-xl font-serif font-bold mb-3" style={{ color: currentTrackData.color }}>
                 {currentTrackData.hobby}
               </h3>
@@ -297,8 +297,8 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
                     onClick={() => {setCurrentTrack(index); setProgress(0);}}
                     className={`w-full p-3 rounded text-left transition-all duration-200 flex items-center gap-4 ${
                       index === currentTrack 
-                        ? 'bg-gray-800 border-l-4' 
-                        : 'hover:bg-gray-900 opacity-60 hover:opacity-100'
+                        ? 'bg-white/20 border-l-4' 
+                        : 'hover:bg-white/10 opacity-60 hover:opacity-100'
                     }`}
                     style={{
                       borderColor: index === currentTrack ? currentTrackData.color : 'transparent'
