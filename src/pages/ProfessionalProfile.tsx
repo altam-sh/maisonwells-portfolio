@@ -5,22 +5,16 @@ import type { PageProps } from '../App';
 
 const workExperience = [
   {
-    company: "Tech Innovations Inc.",
-    role: "Senior Software Engineer",
-    period: "2022 - Present",
-    description: "Led development of interactive web applications using React and TypeScript. Implemented modern UI/UX designs and optimized performance."
+    company: "BG Communications International Inc.",
+    role: "Full-Stack Developer",
+    period: "2024 - 2025",
+    description: "Led development of interactive web applications using React, TypeScript and Springboot. Implemented modern UI/UX designs and optimized performance."
   },
   {
-    company: "Digital Solutions Co.",
-    role: "Frontend Developer",
-    period: "2020 - 2022",
-    description: "Built responsive interfaces with React. Collaborated with design team to translate concepts into functional components."
-  },
-  {
-    company: "Creative Web Studios",
-    role: "Junior Developer",
-    period: "2018 - 2020",
-    description: "Assisted in development of client websites and web applications. Learned fundamentals of modern web development."
+    company: "Genetec Inc.",
+    role: "Integration Specialist",
+    period: "2022",
+    description: "Tested and integrated various software solutions. Collaborated with cross-functional teams and clients to ensure seamless integration of systems."
   }
 ];
 
