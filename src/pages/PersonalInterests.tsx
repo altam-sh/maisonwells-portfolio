@@ -150,10 +150,10 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
     <div className="min-h-screen bg-black text-white p-4 py-8">
       {/* Header */}
       <div
-        className="text-3xl mb-8 transition-opacity duration-1000 font-serif text-center"
+        className="text-3xl mb-12 transition-opacity duration-1000 font-serif text-center"
         style={{ opacity: fadeIn ? 1 : 0 }}
       >
-        [Personal Interests Player]
+        [Personal Interests]
       </div>
 
       {/* Main Player Interface */}
@@ -170,7 +170,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
             {/* Album Art & Info */}
             <div className="relative mb-6">
               <div 
-                className="w-full aspect-square rounded-lg overflow-hidden shadow-2xl border-4 transition-all duration-500"
+                className="w-full aspect-square overflow-hidden shadow-2xl border-4 transition-all duration-500"
                 style={{ borderColor: currentTrackData.color }}
               >
                 <img
@@ -184,19 +184,19 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
               </div>
-              
-              {/* Track Info Overlay */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <h2 className="text-2xl font-serif font-bold mb-1 text-white drop-shadow-lg">
-                  {currentTrackData.title}
-                </h2>
-                <p className="text-sm opacity-90 mb-1 drop-shadow">
-                  {currentTrackData.artist}
-                </p>
-                <p className="text-xs opacity-75 drop-shadow">
-                  {currentTrackData.hobby}
-                </p>
-              </div>
+            </div>
+                                  
+            {/* Track Info Overlay */}
+            <div className="flex flex-col items-center mt-4 mb-4 text-center text-white drop-shadow">
+              <h2 className="text-2xl font-serif font-bold mb-1 text-white drop-shadow-lg">
+                {currentTrackData.title}
+              </h2>
+              <p className="text-sm opacity-90 mb-1 drop-shadow">
+                {currentTrackData.artist}
+              </p>
+              <p className="text-xs opacity-75 drop-shadow">
+                {currentTrackData.hobby}
+              </p>
             </div>
 
             {/* Progress Bar */}
@@ -269,7 +269,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
           {/* Right Column - Info & Track List */}
           <div className="flex-1 lg:min-h-96">
             {/* Track Description */}
-            <div className="mb-6 p-6 rounded-lg bg-gray-900 border-l-4" style={{ borderColor: currentTrackData.color }}>
+            <div className="mb-6 p-6 rounded-md bg-gray-900 border-l-4" style={{ borderColor: currentTrackData.color }}>
               <h3 className="text-xl font-serif font-bold mb-3" style={{ color: currentTrackData.color }}>
                 {currentTrackData.hobby}
               </h3>
