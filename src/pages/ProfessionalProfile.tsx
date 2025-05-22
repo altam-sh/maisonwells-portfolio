@@ -128,7 +128,6 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
         </div>
       </div>
 
-      {/* Content - Scrollable */}
       <div className="flex-1 overflow-y-auto px-4 md:px-8 lg:px-16 pb-8">
         <div
           className="transition-opacity duration-1000 delay-300"
@@ -201,15 +200,21 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
             >
               Return Home
             </button>
-            <div className="flex justify-between items-center mt-8">
-              <ArrowButton 
-              direction="left" 
-              svgPath="/images/arrow.svg" 
-              fadeOut={false} 
-              navigate={navigate} 
-              pageName="mainmenu" 
-            />
-            </div>
+            {/* <div className="relative -my-8 -mx-[2.5vw] py-20 flex justify-start">
+              <div className="group flex items-center space-x-3 cursor-pointer">
+                
+                <ArrowButton 
+                  direction="left" 
+                  svgPath="/images/arrow.svg" 
+                  fadeOut={false} 
+                  navigate={navigate} 
+                  pageName="mainmenu" 
+                />
+                <span className="ml-29 text-2xl transition-all duration-300 group-hover:opacity-50 group-hover:-translate-x-2">
+                  Return Home
+                </span> 
+              </div> 
+            <div>*/}
           </div>
         </div>
       </div>
