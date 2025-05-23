@@ -197,7 +197,7 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
 
   const ZzzSeparator = () => {
     return (
-      <div className="flex justify-center items-center my-2 pb-10 relative">
+      <div className="flex justify-center items-center my-2 pb-29 relative">
         <div className="text-6xl font-serif text-gray-400 tracking-wider">
           <span className="inline-block animate-bounce" style={{ animationDelay: '0s' }}>𝓏</span>
           <span className="inline-block animate-bounce text-5xl" style={{ animationDelay: '0.3s' }}>𝓏</span>
