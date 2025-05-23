@@ -15,6 +15,12 @@ const workExperience = [
     role: "Integration Specialist",
     period: "2022",
     description: "Tested and integrated various software solutions. Collaborated with cross-functional teams and clients to ensure seamless integration of systems."
+  },
+  {
+    company: "Concordia University",
+    role: "B.Eng. Software Engineering",
+    period: "2021-2025",
+    description: "Tested and integrated various software solutions. Collaborated with cross-functional teams and clients to ensure seamless integration of systems."
   }
 ];
 

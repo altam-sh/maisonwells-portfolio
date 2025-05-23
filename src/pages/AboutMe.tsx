@@ -1,8 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-
-type PageProps = {
-  navigate: (page: string, direction: string) => void;
-};
+import type { PageProps} from '../App';
 
 const AboutMe: React.FC<PageProps> = ({ navigate }) => {
   const [fadeIn, setFadeIn] = useState<boolean>(false);
