@@ -87,7 +87,7 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
 
   const ZzzSeparator = () => {
     return (
-      <div className="flex justify-center items-center my-16  relative">
+      <div className="flex justify-center items-center my-2 pb-10 relative">
         <div className="text-6xl font-serif text-gray-400 tracking-wider">
           <span className="inline-block animate-bounce" style={{ animationDelay: '0s' }}>𝓏</span>
           <span className="inline-block animate-bounce text-5xl" style={{ animationDelay: '0.3s' }}>𝓏</span>
@@ -148,12 +148,10 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
           }}
         >
           <h1 className="text-5xl md:text-5xl font-serif mb-8 tracking-tight leading-tight">
-            a lot more to come...
+            A lot more to come...
           </h1>
           <p className="text-xl md:text-2xl font-serif italic text-gray-300 leading-relaxed">
-            Every moment holds infinite possibilities, every corner turned reveals new wonders. 
-            We are perpetual students of serendipity, collectors of the unexpected, 
-            architects of dreams we haven't yet dared to imagine.
+            Thank you for your interest. 
           </p>
         </div>
 
@@ -165,6 +163,17 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
 
       {/* ZZZ Separator */}
       <ZzzSeparator />
+
+      {/* Navigation */}
+      <div className="w-full flex justify-center py-8">
+        <button
+          className="group relative px-8 py-4 border-2 border-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 font-serif overflow-hidden"
+          onClick={() => navigate('mainmenu', 'down')}
+        >
+          <span className="relative z-10">Return Home</span>
+          <div className="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+        </button>
+      </div>
 
       {/* Gallery Section */}
       <div className="pb-20">
@@ -183,23 +192,12 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
         <PhotoGallery />
       </div>
 
-      {/* Navigation */}
-      <div className="fixed bottom-8 left-8">
-        <button
-          className="group relative px-8 py-4 border-2 border-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 font-serif overflow-hidden"
-          onClick={() => navigate('mainmenu', 'down')}
-        >
-          <span className="relative z-10">Return Home</span>
-          <div className="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-        </button>
-      </div>
-
       {/* Subtle grid overlay */}
       <div 
-        className="fixed inset-0 pointer-events-none opacity-5"
+        className="fixed inset-0 pointer-events-none opacity-5 z-0"
         style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgb(255,255,255) 1px, transparent 1px),
+                           linear-gradient(90deg, rgb(255,255,255) 1px, transparent 1px)`,
           backgroundSize: '50px 50px'
         }}
       ></div>
