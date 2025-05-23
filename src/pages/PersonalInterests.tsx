@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX, Home } from 'lucide-react';
+import type { PageProps} from '../App';
+import SnowEffect from '../components/SnowEffect';
 
-type PageProps = {
-  navigate: (page: string, direction: string) => void;
-};
 
 interface Track {
   id: number;
@@ -172,6 +171,9 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
 
   return (
     <div className="min-h-screen bg-black text-white p-4 py-8">
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <SnowEffect />
+      </div>
       {/* Header */}
       <div
         className="text-3xl mb-12 transition-opacity duration-1000 font-serif text-center"
