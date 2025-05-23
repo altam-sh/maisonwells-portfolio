@@ -38,7 +38,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       duration: "2:49",
       durationSeconds: 169,
       image: "/public/images/placeholder3.jpg",
-      color: "#ff6b6b",
+      color: "#b794f4",
       details: [
         "Digital Audio Workstation mastery",
         "Sound design & synthesis",
@@ -55,7 +55,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       duration: "5:00",
       durationSeconds: 300,
       image: "/api/placeholder/400/400",
-      color: "#4ecdc4",
+      color: "#f9e5c1",
       details: [
         "Multi-instrumental proficiency",
         "Classical & contemporary techniques",
@@ -72,7 +72,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       duration: "3:42",
       durationSeconds: 222, 
       image: "/api/placeholder/400/400",
-      color: "#45b7d1",
+      color: "#4B006E",
       details: [
         "Pattern making & construction",
         "Sustainable design principles",
@@ -89,7 +89,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       duration: "3:04",
       durationSeconds: 184, 
       image: "/api/placeholder/400/400",
-      color: "#f7b801",
+      color: "#D58A94 ",
       details: [
         "Traditional drawing fundamentals",
         "Digital illustration mastery",
