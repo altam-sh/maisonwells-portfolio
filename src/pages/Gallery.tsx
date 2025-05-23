@@ -58,29 +58,139 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
     }, 600);
   }, []);
 
+  // const CardioGraph = () => {
+  //   return (
+  //     <div className="absolute inset-0 overflow-hidden opacity-40 pointer-events-none">
+  //       <svg 
+  //         className="w-full h-32 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+  //         viewBox="0 0 800 100"
+  //         preserveAspectRatio="none"
+  //       >
+  //         <path
+  //           d="M0,50 L150,50 L160,10 L170,90 L180,50 L200,50 L210,20 L220,80 L230,50 L400,50 L410,5 L420,95 L430,50 L600,50 L610,25 L620,75 L630,50 L800,50"
+  //           stroke="#8b5cf6"
+  //           strokeWidth="2"
+  //           fill="none"
+  //           className="animate-pulse"
+  //         >
+  //           <animate
+  //             attributeName="stroke-dasharray"
+  //             values="0,1000;1000,0;0,1000"
+  //             dur="3s"
+  //             repeatCount="indefinite"
+  //           />
+  //         </path>
+  //       </svg>
+  //     </div>
+  //   );
+  // };
+
+
   const CardioGraph = () => {
     return (
-      <div className="absolute inset-0 overflow-hidden opacity-40 pointer-events-none">
-        <svg 
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <svg
           className="w-full h-32 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          viewBox="0 0 800 100"
+          viewBox="0 0 1200 100"
           preserveAspectRatio="none"
         >
           <path
-            d="M0,50 L150,50 L160,10 L170,90 L180,50 L200,50 L210,20 L220,80 L230,50 L400,50 L410,5 L420,95 L430,50 L600,50 L610,25 L620,75 L630,50 L800,50"
+            d="
+              M0,50 
+              L50,50 
+              L60,40 
+              L70,50 
+              L80,10 
+              L90,100 
+              L100,50 
+              L140,50 
+              L150,30 
+              L160,50 
+              L200,50 
+
+              L250,50 
+              L260,40 
+              L270,50 
+              L280,10 
+              L290,100 
+              L300,50 
+              L340,50 
+              L350,30 
+              L360,50 
+              L400,50 
+
+              L450,50 
+              L460,40 
+              L470,50 
+              L480,10 
+              L490,100 
+              L500,50 
+              L540,50 
+              L550,30 
+              L560,50 
+              L600,50 
+
+              L650,50 
+              L660,40 
+              L670,50 
+              L680,10 
+              L690,100 
+              L700,50 
+              L740,50 
+              L750,30 
+              L760,50 
+              L800,50 
+
+              L850,50 
+              L860,40 
+              L870,50 
+              L880,10 
+              L890,100 
+              L900,50 
+              L940,50 
+              L950,30 
+              L960,50 
+              L1000,50 
+
+              L1050,50 
+              L1060,40 
+              L1070,50 
+              L1080,10 
+              L1090,100 
+              L1100,50 
+              L1140,50 
+              L1150,30 
+              L1160,50 
+              L1200,50
+            "
             stroke="#8b5cf6"
             strokeWidth="2"
             fill="none"
-            className="animate-pulse"
-          >
-            <animate
-              attributeName="stroke-dasharray"
-              values="0,1000;1000,0;0,1000"
-              dur="3s"
-              repeatCount="indefinite"
-            />
-          </path>
+            style={{
+              strokeDasharray: 2400,
+              strokeDashoffset: 2400,
+              animation: "draw 4s linear infinite, pulseOpacity 2s ease-in-out infinite",
+            }}
+          />
         </svg>
+        <style>
+          {`
+            @keyframes draw {
+              to {
+                stroke-dashoffset: 0;
+              }
+            }
+
+            @keyframes pulseOpacity {
+              0%, 100% {
+                opacity: 0.3;
+              }
+              50% {
+                opacity: 0.5;
+              }
+            }
+          `}
+        </style>
       </div>
     );
   };
