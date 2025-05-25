@@ -38,7 +38,7 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
   return (
     <div 
       ref={containerRef}
-      className="min-h-screen bg-black text-white relative overflow-hidden"
+      className="h-screen bg-black text-white relative overflow-hidden"
     >
       {/* Animated geometric background elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -72,7 +72,7 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
         />
       </div>
 
-      <div className="flex flex-col lg:flex-row min-h-screen">
+      <div className="flex flex-col lg:flex-row h-screen overflow-auto">
         {/* Left Section - Photo */}
         <div className="lg:w-1/2 flex items-center justify-center p-8 relative">
           <div
@@ -115,12 +115,8 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
             }}
           >
             <h1 className="text-5xl lg:text-6xl font-serif mb-4 leading-tight">
-              <span className="inline-block hover:italic transition-all duration-300 cursor-default">
-                About
-              </span>
-              <br />
-              <span className="inline-block hover:italic transition-all duration-300 cursor-default delay-100">
-                Me
+              <span className="relative hover:italic transition-all duration-300 cursor-default">
+                [About Me]
               </span>
             </h1>
             <div className="w-16 h-0.5 bg-white mt-4" />
@@ -135,11 +131,11 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
                 transform: `translateY(${textVisible ? '0' : '20px'})`
               }}
             >
-              <p className="text-lg font-serif leading-relaxed text-gray-200 max-w-3xl">
-                Hi! my name is Altamash, or simply Alta for short, but I usually go by Wells. 
-                I'm a software engineer with a passion for the arts and creating digital experiences 
-                that blur the line between functionality and art. My work exists at the 
-                intersection of clean code and creative expression.
+              <p className="text-lg text-justify font-serif leading-relaxed text-gray-200 max-w-3xl">
+                Hello! my name is Altamash, or simply Alta, though most know me as <span className='italic'>Wells</span>. 
+                I'm a software engineer based in Montréal with a deep love for the arts and a passion for creating digital experiences 
+                that blur the line between functionality and art. But most importantly, I greatly value the relationships I build with my peers,
+                and I strive to create a positive impact in their lives both through my work and beyond it. 
               </p>
             </div>
 
@@ -150,11 +146,11 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
                 transform: `translateY(${textVisible ? '0' : '20px'})`
               }}
             >
-              <p className="text-lg font-serif leading-relaxed text-gray-200 max-w-3xl">
-                When I'm not immersed in code, you'll find me exploring new technologies, 
-                experimenting with design systems, or working on another one of my hobbies.
-                So welcome to "Maison Wells", a home for all my projects, interests, and a glimpse into my heart.
-                I hope you enjoy your stay and find something that resonates with you.
+              <p className="text-lg text-justify font-serif leading-relaxed text-gray-200 max-w-3xl">
+
+                Whether it's code, sound, or visuals, I'm drawn to the kind of work that tells a story — something that invites people in 
+                and leaves them with something meaningful. When I'm not immersed in code, you'll find me experimenting with new technologies, 
+                or exploring creative side projects.
               </p>
             </div>
 
@@ -165,8 +161,25 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
                 transform: `translateY(${textVisible ? '0' : '20px'})`
               }}
             >
+              <p className="text-lg text-justify  font-serif leading-relaxed text-gray-200 max-w-3xl">
+
+                So welcome to <span className='italic'>Maison Wells</span> — a home for all my projects, my interests, and a glimpse into my heart.
+                I hope you enjoy your stay and find something that resonates with you.
+                <br />
+                <br />
+                <span className='block text-right'>Thank you for stopping by!</span>
+              </p>
+            </div>
+
+            <div
+              className="transition-all duration-1000 ease-out delay-1100"
+              style={{ 
+                opacity: textVisible ? 1 : 0,
+                transform: `translateY(${textVisible ? '0' : '20px'})`
+              }}
+            >
               <div className="flex flex-wrap gap-4 mt-8">
-                {['React', 'TypeScript', 'Node.js', 'Python', 'Design'].map((skill, index) => (
+                {['Software Development', 'Web Development', 'Digital Media', '3D Graphics', 'Design', 'Sound'].map((skill, index) => (
                   <span 
                     key={skill}
                     className="px-3 py-1 border border-white border-opacity-40 text-sm font-serif hover:bg-white hover:text-black transition-all duration-300 cursor-default"
