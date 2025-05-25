@@ -169,13 +169,13 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-y-auto">
+    <div className="w-full h-screen bg-black text-white overflow-y-auto overflow-x-hidden">
       <div className="absolute inset-0 z-0 pointer-events-none">
         <SnowEffect />
       </div>
       
       {/* Container with proper padding and max width */}
-      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 min-h-full">
         
         {/* Header - Responsive text sizes */}
         <div
