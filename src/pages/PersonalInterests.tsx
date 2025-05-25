@@ -29,87 +29,92 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
   const tracks: Track[] = [
     {
       id: 1,
-      title: "Synthesis & Soul",
+      title: "Regarding Love",
       artist: "Creative Process",
       hobby: "Music Production & Composition",
-      description: "Crafting sonic landscapes through digital orchestration",
-      duration: "2:49",
-      durationSeconds: 169,
+      description: "**All tracks playing are original compositions written and produced by me",
+      duration: "0:37",
+      durationSeconds: 37,
       image: "/public/images/placeholder3.jpg",
+      audioUrl: "/audio/regarding_love.MP3",
       color: "#b794f4",
       details: [
-        "Digital Audio Workstation mastery",
-        "Sound design & synthesis",
+        "Digital Audio Workstation (DAW) mastery",
         "Mixing & mastering techniques",
-        "Genre-fluid composition"
+        "Multi-Genre composition",
+        "Sound design & performance"
       ]
     },
     {
       id: 2,
-      title: "Strings & Keys",
+      title: "How Things Add Up",
       artist: "Physical Expression",
       hobby: "Instrument Playing",
-      description: "Translating emotion through tactile musicality",
-      duration: "5:00",
-      durationSeconds: 300,
+      description: "Classical & Jazz Trombonist, Guitar, Ukulele and Piano enthusiast",
+      duration: "0:54",
+      durationSeconds: 54,
       image: "/api/placeholder/400/400",
-      color: "#f9e5c1",
+      audioUrl: "/audio/how_things_add_up.wav",
+      color: "#D58A94",
       details: [
         "Multi-instrumental proficiency",
-        "Classical & contemporary techniques",
-        "Live performance experience",
+        "Classical & Jazz Trombonist, won gold at several competitions",
+        "Live performance and experience playing gigs",
         "Improvisation & interpretation"
       ]
     },
     {
       id: 3,
-      title: "Fabric Futures",
+      title: "Falling Stars",
       artist: "Wearable Art",
       hobby: "Clothing Design",
-      description: "Engineering identity through textile innovation",
-      duration: "3:42",
-      durationSeconds: 222, 
+      description: "Experimenting with clothing design and construction",
+      duration: "1:25",
+      durationSeconds: 85, 
       image: "/api/placeholder/400/400",
+      audioUrl: "/audio/falling_stars.wav",
       color: "#4B006E",
       details: [
-        "Pattern making & construction",
-        "Sustainable design principles",
-        "Fashion-forward aesthetics",
-        "Custom tailoring techniques"
+        "Screen printing & textile experience alongside manufacturers",
+        "Printing custom sample pieces",
+        "Digital mockup and garment design",
+        "Basic sewing knowledge"
       ]
     },
     {
       id: 4,
-      title: "Pixel Perfect",
+      title: "Periwinkle",
       artist: "Visual Narratives",
       hobby: "Drawing & Digital Art",
-      description: "Bridging analog intuition with digital precision",
-      duration: "3:04",
-      durationSeconds: 184, 
+      description: "Art exploration across mediums and styles",
+      duration: "0:54",
+      durationSeconds: 54, 
       image: "/api/placeholder/400/400",
-      color: "#D58A94 ",
+      audioUrl: "/audio/periwinkle_demo.mp3",
+      color: "#CCCCFF",
       details: [
-        "Traditional drawing fundamentals",
-        "Digital illustration mastery",
-        "Character & concept design",
+        "Traditional and Digital illustration experience",
+        "2D, 3D and vector knowledge",
+        "Animation and sprite creation skills",
         "Mixed media experimentation"
       ]
     },
     {
       id: 5,
-      title: "Moving Pictures",
+      title: "I Know (prod. dercept)",
       artist: "Cinematic Vision",
-      hobby: "Filmmaking",
+      hobby: "Video Production",
       description: "Capturing stories through the language of light",
-      duration: "5:33",
-      durationSeconds: 333,
+      duration: "0:38",
+      durationSeconds: 38,
       image: "/api/placeholder/400/400",
+      audioUrl: "/audio/dercept.mp3",
       color: "#6a4c93",
       details: [
-        "Cinematography & composition",
         "Post-production workflows",
-        "Narrative storytelling",
-        "Experimental techniques"
+        "Video editing and color grading experience",
+        "Camera operation",
+        "Skit and cinematography compositions",
       ]
     }
   ];
@@ -120,28 +125,74 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
     }, 100);
   }, []);
 
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (isPlaying && !isMuted) {
+  //       setCurrentTime((prevTime) => {
+  //         const newTime = prevTime + 1;
+  //         if (newTime >= tracks[currentTrack].durationSeconds) {
+  //           return 0;
+  //         }
+  //         return newTime;
+  //       });
+  //     }
+  //   }, 1000);
+
+  //   return () => clearInterval(interval);
+  // }, [isPlaying, isMuted, currentTrack]);
+
+  // useEffect(() => {
+  //   setCurrentTime(0);
+  // }, [currentTrack]);
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (isPlaying && !isMuted) {
-        setCurrentTime((prevTime) => {
-          const newTime = prevTime + 1;
-          if (newTime >= tracks[currentTrack].durationSeconds) {
-            return 0;
-          }
-          return newTime;
-        });
+  if (audioRef.current) {
+    audioRef.current.volume = isMuted ? 0 : volume;
+  }
+}, [volume, isMuted]);
+
+  useEffect(() => {
+  if (audioRef.current) {
+    const audio = audioRef.current;
+    
+    audio.src = tracks[currentTrack].audioUrl || '';
+    audio.volume = isMuted ? 0 : volume;
+  
+    const updateTime = () => {
+      setCurrentTime(Math.floor(audio.currentTime));
+    };
+    
+    const handleEnded = () => {
+      handleNext();
+    };
+ 
+    const handleCanPlay = () => {
+      if (isPlaying) {
+        audio.play().catch(console.error);
       }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [isPlaying, isMuted, currentTrack]);
-
-  useEffect(() => {
-    setCurrentTime(0);
-  }, [currentTrack]);
+    };
+    
+    audio.addEventListener('timeupdate', updateTime);
+    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('canplay', handleCanPlay);
+    
+    return () => {
+      audio.removeEventListener('timeupdate', updateTime);
+      audio.removeEventListener('ended', handleEnded);
+      audio.removeEventListener('canplay', handleCanPlay);
+    };
+  }
+}, [currentTrack]);
 
   const handlePlayPause = () => {
-    setIsPlaying(!isPlaying);
+      if (audioRef.current) {
+        if (isPlaying) {
+          audioRef.current.pause();
+        } else {
+          audioRef.current.play().catch(console.error);
+        }
+      }
+      setIsPlaying(!isPlaying);
   };
 
   const handlePrevious = () => {
@@ -159,17 +210,29 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
   };
 
   const handleVolumeBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
-  const rect = e.currentTarget.getBoundingClientRect();
-  const clickX = e.clientX - rect.left;
-  const barWidth = rect.width;
-  const newVolume = Math.max(0, Math.min(1, clickX / barWidth));
-  
-  setVolume(newVolume);
-  
-  if (isMuted) {
-    setIsMuted(false);
-  }
-};
+    const rect = e.currentTarget.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const barWidth = rect.width;
+    const newVolume = Math.max(0, Math.min(1, clickX / barWidth));
+    
+    setVolume(newVolume);
+    
+    if (isMuted) {
+      setIsMuted(false);
+    }
+  };
+
+  const handleProgressBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (audioRef.current) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const barWidth = rect.width;
+      const clickTime = (clickX / barWidth) * tracks[currentTrack].durationSeconds;
+      
+      audioRef.current.currentTime = clickTime;
+      setCurrentTime(Math.floor(clickTime));
+    }
+  };
 
   const currentTrackData = tracks[currentTrack];
 
@@ -240,11 +303,11 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
                   {currentTrackData.title}
                 </h2>
                 <p className="text-xs sm:text-sm opacity-90 mb-1 drop-shadow">
-                  {currentTrackData.artist}
-                </p>
-                <p className="text-xs opacity-75 drop-shadow">
                   {currentTrackData.hobby}
                 </p>
+                {/* <p className="text-xs opacity-75 drop-shadow">
+                  {currentTrackData.artist}
+                </p> */}
               </div>
 
               {/* Progress Bar */}
@@ -253,16 +316,22 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
                   <span>{formatTime(currentTime)}</span>
                   <span>{currentTrackData.duration}</span>
                 </div>
-                <div className="w-full h-1 bg-white/15 rounded-full overflow-hidden">
-                  <div
-                    className="h-full transition-all duration-100 rounded-full"
-                    style={{
-                      width: `${progressPercentage}%`,
-                      backgroundColor: currentTrackData.color,
-                      boxShadow: `0 0 10px ${currentTrackData.color}40`
-                    }}
-                  ></div>
-                </div>
+                  <div className="w-full h-1 bg-white/15 rounded-full overflow-hidden cursor-pointer" onClick={handleProgressBarClick}>
+                    <div
+                      className="h-full transition-all duration-100 rounded-full pointer-events-none"
+                      style={{
+                        width: `${progressPercentage}%`,
+                        backgroundColor: currentTrackData.color,
+                        boxShadow: `0 0 10px ${currentTrackData.color}40`
+                      }}
+                    ></div>
+                  </div>
+
+                  <audio
+                    ref={audioRef}
+                    preload="metadata"
+                    className="hidden"
+                  />
               </div>
 
               {/* Controls */}
