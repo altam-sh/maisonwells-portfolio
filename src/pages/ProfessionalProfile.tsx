@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X, ExternalLink, Github } from 'lucide-react';
 import type { PageProps } from '../App';
-//import ArrowButton from '../components/ArrowButton';
 
 const workExperience = [
   {
@@ -18,7 +17,13 @@ const workExperience = [
   },
   {
     company: "Concordia University",
-    role: "B.Eng. Software Engineering",
+    role: "B.Eng. Software Engineering (Completed)",
+    period: "2021-2025",
+    description: "Tested and integrated various software solutions. Collaborated with cross-functional teams and clients to ensure seamless integration of systems."
+  },
+  {
+    company: "10+ Hackathons and Competitions",
+    role: "ConUHacks, McGame Jam, CsGames, and many more",
     period: "2021-2025",
     description: "Tested and integrated various software solutions. Collaborated with cross-functional teams and clients to ensure seamless integration of systems."
   }
@@ -250,7 +255,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                   </div>
                 </div>
 
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative mx-auto w-1/2 aspect-video overflow-hidden">
                   <img 
                     src={getSelectedProject()?.thumbnail} 
                     alt={getSelectedProject()?.title} 

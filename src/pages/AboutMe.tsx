@@ -87,7 +87,7 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
               <div className="absolute -inset-2 border-3 border-white transform rotate-1 opacity-50" />
               <div className="absolute -inset-1 border-2 border-purple-400 transform -rotate-1 opacity-80" />
               <img 
-                src="/public/images/placeholder3.jpg" 
+                src="/public/images/ProfilePicture.png" 
                 alt="Profile"
                 className="relative z-10 object-cover grayscale hover:grayscale-0 transition-all duration-700"
                   style={{
@@ -175,7 +175,7 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
                 I hope you enjoy your stay and find something that resonates with you.
                 <br />
                 <br />
-                <span className='block text-right'>Thank you for stopping by!</span>
+                <span className='block text-right'>Thank you for stopping by, <br /> contact me at <span className='text-purple-400'>altasheikh01@gmail.com</span> for any inquiries!</span>
               </p>
             </div>
 
