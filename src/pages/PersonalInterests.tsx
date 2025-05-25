@@ -158,6 +158,19 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
     setIsMuted(!isMuted);
   };
 
+  const handleVolumeBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  const rect = e.currentTarget.getBoundingClientRect();
+  const clickX = e.clientX - rect.left;
+  const barWidth = rect.width;
+  const newVolume = Math.max(0, Math.min(1, clickX / barWidth));
+  
+  setVolume(newVolume);
+  
+  if (isMuted) {
+    setIsMuted(false);
+  }
+};
+
   const currentTrackData = tracks[currentTrack];
 
   const progressPercentage = (currentTime / currentTrackData.durationSeconds) * 100;
@@ -289,9 +302,12 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
                 >
                   {isMuted ? <VolumeX size={18} className="sm:w-5 sm:h-5" /> : <Volume2 size={18} className="sm:w-5 sm:h-5" />}
                 </button>
-                <div className="flex-1 h-1 bg-white/15 rounded-full overflow-hidden">
+                <div 
+                  className="flex-1 h-1 bg-white/15 rounded-full overflow-hidden cursor-pointer"
+                  onClick={handleVolumeBarClick}
+                >
                   <div
-                    className="h-full rounded-full transition-all duration-200"
+                    className="h-full rounded-full transition-all duration-200 pointer-events-none"
                     style={{
                       width: isMuted ? '0%' : `${volume * 100}%`,
                       backgroundColor: currentTrackData.color
