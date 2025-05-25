@@ -192,7 +192,7 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
                     key={skill}
                     className="px-3 py-1 border border-white border-opacity-40 text-sm font-serif hover:bg-white hover:text-black transition-all duration-300 cursor-default"
                     style={{
-                      transitionDelay: `${1100 + index * 100}ms`
+                      transitionDelay: `${1400 + index * 100}ms`
                     }}
                   >
                     {skill}
@@ -204,7 +204,7 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
 
           {/* Navigation */}
           <div
-            className="transition-all duration-1000 ease-out delay-1000"
+            className="transition-all duration-1000 ease-out delay-1400"
             style={{ 
               opacity: textVisible ? 1 : 0,
               transform: `translateY(${textVisible ? '0' : '20px'})`
