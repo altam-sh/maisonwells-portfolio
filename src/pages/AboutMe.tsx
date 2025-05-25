@@ -89,7 +89,15 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
               <img 
                 src="/public/images/placeholder3.jpg" 
                 alt="Profile"
-                className="relative z-10 w-[15vw] h-[20vw] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="relative z-10 object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  style={{
+                  width: '20vw',
+                  height: '25vw',
+                  maxWidth: '300px',
+                  maxHeight: '400px',
+                  minWidth: '200px',
+                  minHeight: '250px'
+                }}
               />
               {/* Accent line that follows mouse */}
               <div 
@@ -108,13 +116,13 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
         <div className="lg:w-1/2 flex flex-col justify-center p-8 lg:p-16 relative">
           {/* Main heading */}
           <div
-            className="mb-12 transition-all duration-1000 ease-out delay-300"
+            className="mb-8 transition-all duration-1000 ease-out delay-300"
             style={{ 
               opacity: fadeIn ? 1 : 0,
               transform: `translateY(${fadeIn ? '0' : '30px'})`
             }}
           >
-            <h1 className="text-5xl lg:text-6xl font-serif mb-4 leading-tight">
+            <h1 className="text-5xl lg:text-5xl font-serif mb-4 leading-tight">
               <span className="relative hover:italic transition-all duration-300 cursor-default">
                 [About Me]
               </span>
@@ -131,7 +139,7 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
                 transform: `translateY(${textVisible ? '0' : '20px'})`
               }}
             >
-              <p className="text-lg text-justify font-serif leading-relaxed text-gray-200 max-w-3xl">
+              <p className="text-base text-justify font-serif leading-relaxed text-gray-200 max-w-3xl">
                 Hello! my name is Altamash, or simply Alta, though most know me as <span className='italic'>Wells</span>. 
                 I'm a software engineer based in Montréal with a deep love for the arts and a passion for creating digital experiences 
                 that blur the line between functionality and art. But most importantly, I greatly value the relationships I build with my peers,
@@ -146,7 +154,7 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
                 transform: `translateY(${textVisible ? '0' : '20px'})`
               }}
             >
-              <p className="text-lg text-justify font-serif leading-relaxed text-gray-200 max-w-3xl">
+              <p className="text-base text-justify font-serif leading-relaxed text-gray-200 max-w-3xl">
 
                 Whether it's code, sound, or visuals, I'm drawn to the kind of work that tells a story — something that invites people in 
                 and leaves them with something meaningful. When I'm not immersed in code, you'll find me experimenting with new technologies, 
@@ -161,7 +169,7 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
                 transform: `translateY(${textVisible ? '0' : '20px'})`
               }}
             >
-              <p className="text-lg text-justify  font-serif leading-relaxed text-gray-200 max-w-3xl">
+              <p className="text-base text-justify  font-serif leading-relaxed text-gray-200 max-w-3xl">
 
                 So welcome to <span className='italic'>Maison Wells</span> — a home for all my projects, my interests, and a glimpse into my heart.
                 I hope you enjoy your stay and find something that resonates with you.
