@@ -175,7 +175,7 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
                 I hope you enjoy your stay and find something that resonates with you.
                 <br />
                 <br />
-                <span className='block text-right'>Thank you for stopping by, <br /> contact me at altasheikh01@gmail.com for any inquiries!</span>
+                <span className='block text-right'>Thank you for stopping by, <br /> contact me at <span className='text-purple-400'>altasheikh01@gmail.com</span> for any inquiries!</span>
               </p>
             </div>
 
