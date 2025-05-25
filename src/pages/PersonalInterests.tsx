@@ -176,10 +176,16 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       </div>
       {/* Header */}
       <div
-        className="text-3xl mb-12 transition-opacity duration-1000 font-serif text-center"
+        className="text-3xl mb-4 transition-opacity duration-1000 font-serif text-center"
         style={{ opacity: fadeIn ? 1 : 0 }}
       >
         [Personal Interests]
+      </div>
+      <div
+        className="text-xl mb-12 transition-opacity duration-1000 font-serif italic text-center"
+        style={{ opacity: fadeIn ? 1 : 0 }}
+      >
+        discover my passions through this playlist
       </div>
 
       {/* Main Player Interface */}

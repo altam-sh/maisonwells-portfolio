@@ -236,7 +236,7 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
             </div>
             
             {/* Purple border on hover */}
-            <div className="absolute inset-0 border-4 border-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            <div className="absolute inset-0 border border-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
           </div>
         ))}
       </div>
