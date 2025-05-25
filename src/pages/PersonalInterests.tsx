@@ -173,11 +173,9 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <SnowEffect />
       </div>
-      
-      {/* Container with proper padding and max width */}
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 min-h-full">
         
-        {/* Header - Responsive text sizes */}
+        {/* Header */}
         <div
           className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl mb-2 sm:mb-3 lg:mb-4 transition-opacity duration-1000 font-serif text-center"
           style={{ opacity: fadeIn ? 1 : 0 }}
@@ -201,7 +199,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
         >
           <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8 xl:gap-12">
             
-            {/* Left Column - Player Controls - Responsive sizing */}
+            {/* Left Column - Player Controls */}
             <div className="w-full lg:w-80 xl:w-96 lg:flex-shrink-0">
               
               {/* Album Art & Info */}
@@ -223,7 +221,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
                 </div>
               </div>
                                         
-              {/* Track Info Overlay - Responsive text */}
+              {/* Track Info Overlay */}
               <div className="flex flex-col items-center mt-3 sm:mt-4 mb-3 sm:mb-4 text-center text-white drop-shadow">
                 <h2 className="text-lg sm:text-xl lg:text-2xl font-serif font-bold mb-1 text-white drop-shadow-lg">
                   {currentTrackData.title}
@@ -254,7 +252,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
                 </div>
               </div>
 
-              {/* Controls - Responsive button sizes */}
+              {/* Controls */}
               <div className="flex items-center justify-between mb-4 sm:mb-6">
                 <button
                   onClick={handlePrevious}
@@ -303,10 +301,10 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
               </div>
             </div>
 
-            {/* Right Column - Info & Track List - Responsive spacing */}
+            {/* Right Column - Info & Track List */}
             <div className="flex-1 min-h-0">
               
-              {/* Track Description - Responsive padding and text */}
+              {/* Track Description*/}
               <div className="mb-4 sm:mb-6 p-4 sm:p-6 rounded-md bg-white/10 border-l-4" style={{ borderColor: currentTrackData.color }}>
                 <h3 className="text-lg sm:text-xl font-serif font-bold mb-2 sm:mb-3" style={{ color: currentTrackData.color }}>
                   {currentTrackData.hobby}
@@ -325,8 +323,8 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
                 </div>
               </div>
 
-              {/* Track List Preview - Responsive sizing */}
-              <div className="mb-6 sm:mb-8">
+              {/* Track List Preview */}
+              <div className="mb-2 sm:mb-8">
                 <h3 className="text-base sm:text-lg font-serif mb-3 sm:mb-4 opacity-75">Creative Portfolio:</h3>
                 <div className="space-y-1.5 sm:space-y-2">
                   {tracks.map((track, index) => (
@@ -353,16 +351,17 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
                 </div>
               </div>
 
-              {/* Navigation - Responsive button */}
-              <button
-                className="group relative px-6 sm:px-8 py-3 sm:py-4 border-2 border-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 font-serif overflow-hidden text-sm sm:text-base"
-                onClick={() => navigate('mainmenu', 'up')}
-              >
-                <span className="relative z-10">Return Home</span>
-                <div className="absolute inset-0 bg-white transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              </button>
             </div>
           </div>
+        </div>
+        <div className="flex justify-center mt-6 sm:mt-8 lg:mt-6">
+          <button
+            className="group relative px-6 sm:px-8 py-3 sm:py-4 border-2 border-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 font-serif overflow-hidden text-sm sm:text-base"
+            onClick={() => navigate('mainmenu', 'up')}
+          >
+            <span className="relative z-10">Return Home</span>
+            <div className="absolute inset-0 bg-white transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+          </button>
         </div>
       </div>
     </div>
