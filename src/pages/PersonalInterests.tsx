@@ -35,7 +35,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       description: "**All tracks playing are original compositions written and produced by me",
       duration: "0:37",
       durationSeconds: 37,
-      image: "/public/images/placeholder3.jpg",
+      image: "/public/images/placeholder4.PNG",
       audioUrl: "/audio/regarding_love.MP3",
       color: "#b794f4",
       details: [
@@ -53,7 +53,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       description: "Classical & Jazz Trombonist, Guitar, Ukulele and Piano enthusiast",
       duration: "0:54",
       durationSeconds: 54,
-      image: "/api/placeholder/400/400",
+      image: "/public/images/placeholder3.jpg",
       audioUrl: "/audio/how_things_add_up.wav",
       color: "#D58A94",
       details: [
@@ -71,7 +71,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       description: "Experimenting with clothing design and construction",
       duration: "1:25",
       durationSeconds: 85, 
-      image: "/api/placeholder/400/400",
+      image: "/public/images/clothing.png",
       audioUrl: "/audio/falling_stars.wav",
       color: "#4B006E",
       details: [
@@ -89,7 +89,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       description: "Art exploration across mediums and styles",
       duration: "0:54",
       durationSeconds: 54, 
-      image: "/api/placeholder/400/400",
+      image: "/public/images/jaggo.png",
       audioUrl: "/audio/periwinkle_demo.mp3",
       color: "#CCCCFF",
       details: [
@@ -107,7 +107,7 @@ const PersonalInterests: React.FC<PageProps> = ({ navigate }) => {
       description: "Capturing stories through the language of light",
       duration: "0:38",
       durationSeconds: 38,
-      image: "/api/placeholder/400/400",
+      image: "/public/images/filmmaking.png",
       audioUrl: "/audio/dercept.mp3",
       color: "#6a4c93",
       details: [
