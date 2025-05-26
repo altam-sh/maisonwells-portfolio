@@ -7,25 +7,27 @@ const workExperience = [
     company: "BG Communications International Inc.",
     role: "Full-Stack Developer",
     period: "2024 - 2025",
-    description: "Led development of interactive web applications using React, TypeScript and Springboot. Implemented modern UI/UX designs and optimized performance."
+    description: "Development of interactive web applications using React, TypeScript and Springboot. Implemented modern UI/UX designs and optimized performance.",
+    description2: "Collaborated closely with clients to gather requirements and deliver tailored solutions."
   },
   {
     company: "Genetec Inc.",
     role: "Integration Specialist",
     period: "2022",
-    description: "Tested and integrated various software solutions. Collaborated with cross-functional teams and clients to ensure seamless integration of systems."
+    description: "Tested and integrated various software solutions. Collaborated with cross-functional teams and clients to ensure seamless integration of systems.",
+    description2: "Produced detailed documentation and reports on integration processes and outcomes."
   },
   {
     company: "Concordia University",
     role: "B.Eng. Software Engineering (Completed)",
     period: "2021-2025",
-    description: "Tested and integrated various software solutions. Collaborated with cross-functional teams and clients to ensure seamless integration of systems."
   },
   {
     company: "10+ Hackathons and Competitions",
     role: "ConUHacks, McGame Jam, CsGames, and many more",
     period: "2021-2025",
-    description: "Tested and integrated various software solutions. Collaborated with cross-functional teams and clients to ensure seamless integration of systems."
+    description: "Completed Projects within various hackathons and competitions, showcasing skills in software engineering and time efficiency.",
+    description2: "Part of teams that won awards during competitions, including Puzzle Hero, Info-Theo, and others."
   }
 ];
 
@@ -420,6 +422,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                     <span className="text-gray-400">{job.period}</span>
                   </div>
                   <p className="text-gray-300">{job.description}</p>
+                  <p className="text-gray-300">{job.description2}</p>
                 </div>
               ))}
             </div>
