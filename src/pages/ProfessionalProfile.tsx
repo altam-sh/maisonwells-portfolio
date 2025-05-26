@@ -33,8 +33,8 @@ const projects = [
   {
     id: 1,
     title: "3D Water Ripple Simulator",
-    tags: ["React", "Canvas API", "TypeScript"],
-    thumbnail: "public/images/placeholder.jpg",
+    tags: ["C++", "OpenGL", "LibIGL", "Eigen"],
+    thumbnail: "public/images/waterripple.png",
     description: "A creative coding project that generates unique algorithmic art pieces based on user input and randomization.",
     longDescription: "This application leverages mathematical algorithms to create unique visual compositions. Users can adjust parameters to influence the generative process, resulting in one-of-a-kind digital artworks. The project explores the intersection of code and creativity, using React for the interface and Canvas API for rendering graphics.",
     technicalDetails: "Built with React and TypeScript, this project utilizes the Canvas API for rendering graphics. It features a user-friendly interface that allows users to customize parameters, generating unique art pieces each time. The application is optimized for performance and responsiveness, ensuring smooth interactions.",
@@ -48,7 +48,7 @@ const projects = [
   {
     id: 2,
     title: "Visual 3D B-Spline Editor",
-    tags: ["D3.js", "React", "Firebase"],
+    tags: ["C++", "OpenGL", "LibIGL"],
     thumbnail: "public/images/placeholder2.png",
     description: "A dashboard that transforms complex datasets into interactive, visually compelling representations.",
     longDescription: "This data visualization project makes complex information accessible through interactive charts and graphs. Built with D3.js and React, it features real-time updates via Firebase, custom animations, and responsive design for all device sizes. The visualization techniques range from standard bar charts to more experimental representations.",
@@ -63,7 +63,7 @@ const projects = [
   {
     id: 3,
     title: "Zippo Lighter Technical Modeling",
-    tags: ["Next.js", "Tailwind CSS", "Stripe API"],
+    tags: ["Fusion 360", "Technical Drawing"],
     thumbnail: "public/images/placeholder3.jpg",
     description: "A fully functional e-commerce platform with modern design, smooth animations, and secure payment processing.",
     longDescription: "This e-commerce solution features a clean, intuitive interface built with Next.js and Tailwind CSS. It includes product filtering, user accounts, shopping cart functionality, and secure checkout via Stripe. Performance optimizations ensure quick load times and smooth transitions between pages.",
@@ -81,7 +81,7 @@ const projects2 = [
   {
     id: 4,
     title: "Giuseppe's Cellar",
-    tags: ["React", "Canvas API", "TypeScript"],
+    tags: ["Unity", "C#", "Blender", "AI Behavior Trees", "3D"],
     thumbnail: "public/images/placeholder.jpg",
     description: "A creative coding project that generates unique algorithmic art pieces based on user input and randomization.",
     longDescription: "This application leverages mathematical algorithms to create unique visual compositions. Users can adjust parameters to influence the generative process, resulting in one-of-a-kind digital artworks. The project explores the intersection of code and creativity, using React for the interface and Canvas API for rendering graphics.",
@@ -96,7 +96,7 @@ const projects2 = [
   {
     id: 5,
     title: "Chromatic Journey",
-    tags: ["D3.js", "React", "Firebase"],
+    tags: ["Unity", "C#", "2D Animation", "Level Design", "Digital Art"],
     thumbnail: "public/images/placeholder2.png",
     description: "A dashboard that transforms complex datasets into interactive, visually compelling representations.",
     longDescription: "This data visualization project makes complex information accessible through interactive charts and graphs. Built with D3.js and React, it features real-time updates via Firebase, custom animations, and responsive design for all device sizes. The visualization techniques range from standard bar charts to more experimental representations.",
@@ -111,7 +111,7 @@ const projects2 = [
   {
     id: 6,
     title: "Chords of the Past",
-    tags: ["Next.js", "Tailwind CSS", "Stripe API"],
+    tags: ["Unity", "C#", "Digital Art", "2D Animation", "Game Design", "Sound Design"],
     thumbnail: "public/images/placeholder3.jpg",
     description: "A fully functional e-commerce platform with modern design, smooth animations, and secure payment processing.",
     longDescription: "This e-commerce solution features a clean, intuitive interface built with Next.js and Tailwind CSS. It includes product filtering, user accounts, shopping cart functionality, and secure checkout via Stripe. Performance optimizations ensure quick load times and smooth transitions between pages.",
@@ -126,7 +126,7 @@ const projects2 = [
   {
     id: 7,
     title: "Undeath",
-    tags: ["Three.js", "Web Audio API", "React"],
+    tags: ["Unity", "C#", "Pixel Art", "Sprite Animation"],
     thumbnail: "public/images/placeholder4.png",
     description: "A 3D audio visualization tool that reacts to music in real-time, creating immersive visual experiences.",
     longDescription: "This project uses the Web Audio API to analyze audio frequencies and Three.js to render dynamic 3D visualizations that respond to music in real-time. Users can upload their own audio files or connect to streaming services. The visualizations adapt to different audio characteristics, creating unique visual patterns for each track.",
@@ -144,7 +144,7 @@ const projects3 = [
   {
     id: 8,
     title: "OPUS Web - ERP Module",
-    tags: ["React", "Canvas API", "TypeScript"],
+    tags: ["React", "TypeScript", "Springboot", "Java", "Docker", "SQL", "JUnit", "Robot + Selenium", "Figma"],
     thumbnail: "public/images/placeholder.jpg",
     description: "A creative coding project that generates unique algorithmic art pieces based on user input and randomization.",
     longDescription: "This application leverages mathematical algorithms to create unique visual compositions. Users can adjust parameters to influence the generative process, resulting in one-of-a-kind digital artworks. The project explores the intersection of code and creativity, using React for the interface and Canvas API for rendering graphics.",
@@ -159,7 +159,7 @@ const projects3 = [
   {
     id: 9,
     title: "Condo Connect - Property Management System",
-    tags: ["D3.js", "React", "Firebase"],
+    tags: ["React", "CSS", "JavaScript", "Firebase", "Python", "JUnit", "Figma"],
     thumbnail: "public/images/placeholder2.png",
     description: "A dashboard that transforms complex datasets into interactive, visually compelling representations.",
     longDescription: "This data visualization project makes complex information accessible through interactive charts and graphs. Built with D3.js and React, it features real-time updates via Firebase, custom animations, and responsive design for all device sizes. The visualization techniques range from standard bar charts to more experimental representations.",
@@ -174,7 +174,7 @@ const projects3 = [
   {
     id: 10,
     title: "Journalling Mobile App",
-    tags: ["Next.js", "Tailwind CSS", "Stripe API"],
+    tags: ["React Native", "Tailwindcss", "JavaScript", "Figma", "UI/UX", "User Feedback and Testing"],
     thumbnail: "public/images/placeholder3.jpg",
     description: "A fully functional e-commerce platform with modern design, smooth animations, and secure payment processing.",
     longDescription: "This e-commerce solution features a clean, intuitive interface built with Next.js and Tailwind CSS. It includes product filtering, user accounts, shopping cart functionality, and secure checkout via Stripe. Performance optimizations ensure quick load times and smooth transitions between pages.",
@@ -189,7 +189,7 @@ const projects3 = [
   {
     id: 11,
     title: "Purrsonality - Web Visual Novel",
-    tags: ["Three.js", "Web Audio API", "React"],
+    tags: ["React", "TypeScript", "Vite", "Digital Art", "Decision Trees", "Storywriting"],
     thumbnail: "public/images/placeholder4.png",
     description: "A 3D audio visualization tool that reacts to music in real-time, creating immersive visual experiences.",
     longDescription: "This project uses the Web Audio API to analyze audio frequencies and Three.js to render dynamic 3D visualizations that respond to music in real-time. Users can upload their own audio files or connect to streaming services. The visualizations adapt to different audio characteristics, creating unique visual patterns for each track.",
@@ -204,7 +204,7 @@ const projects3 = [
   {
     id: 12,
     title: "Maison Wells - Personal Portfolio",
-    tags: ["Three.js", "Web Audio API", "React"],
+    tags: ["React", "TypeScript", "Vite", "Tailwindcss", "CSS Animation" ],
     thumbnail: "public/images/placeholder4.png",
     description: "A 3D audio visualization tool that reacts to music in real-time, creating immersive visual experiences.",
     longDescription: "This project uses the Web Audio API to analyze audio frequencies and Three.js to render dynamic 3D visualizations that respond to music in real-time. Users can upload their own audio files or connect to streaming services. The visualizations adapt to different audio characteristics, creating unique visual patterns for each track.",
