@@ -32,41 +32,187 @@ const workExperience = [
 const projects = [
   {
     id: 1,
-    title: "Algorithmic Art Generator",
+    title: "3D Water Ripple Simulator",
     tags: ["React", "Canvas API", "TypeScript"],
     thumbnail: "public/images/placeholder.jpg",
     description: "A creative coding project that generates unique algorithmic art pieces based on user input and randomization.",
     longDescription: "This application leverages mathematical algorithms to create unique visual compositions. Users can adjust parameters to influence the generative process, resulting in one-of-a-kind digital artworks. The project explores the intersection of code and creativity, using React for the interface and Canvas API for rendering graphics.",
+    technicalDetails: "Built with React and TypeScript, this project utilizes the Canvas API for rendering graphics. It features a user-friendly interface that allows users to customize parameters, generating unique art pieces each time. The application is optimized for performance and responsiveness, ensuring smooth interactions.",
+    screenshot1: "public/images/screenshot1.jpg",
+    screenshot2: "public/images/screenshot2.jpg",
+    screenshot3: "public/images/screenshot3.jpg",
+    screenshot4: "public/images/screenshot4.jpg",
     link: "https://example.com/art-generator",
     github: "https://github.com/yourusername/algorithmic-art"
   },
   {
     id: 2,
-    title: "Interactive Data Visualization",
+    title: "Visual 3D B-Spline Editor",
     tags: ["D3.js", "React", "Firebase"],
     thumbnail: "public/images/placeholder2.png",
     description: "A dashboard that transforms complex datasets into interactive, visually compelling representations.",
     longDescription: "This data visualization project makes complex information accessible through interactive charts and graphs. Built with D3.js and React, it features real-time updates via Firebase, custom animations, and responsive design for all device sizes. The visualization techniques range from standard bar charts to more experimental representations.",
+    technicalDetails: "",
+    screenshot1: "public/images/screenshot1.jpg",
+    screenshot2: "public/images/screenshot2.jpg",
+    screenshot3: "public/images/screenshot3.jpg",
+    screenshot4: "public/images/screenshot4.jpg",
     link: "https://example.com/data-viz",
     github: "https://github.com/yourusername/data-visualization"
   },
   {
     id: 3,
-    title: "E-Commerce Platform",
+    title: "Zippo Lighter Technical Modeling",
     tags: ["Next.js", "Tailwind CSS", "Stripe API"],
     thumbnail: "public/images/placeholder3.jpg",
     description: "A fully functional e-commerce platform with modern design, smooth animations, and secure payment processing.",
     longDescription: "This e-commerce solution features a clean, intuitive interface built with Next.js and Tailwind CSS. It includes product filtering, user accounts, shopping cart functionality, and secure checkout via Stripe. Performance optimizations ensure quick load times and smooth transitions between pages.",
+    technicalDetails: "",
+    screenshot1: "public/images/screenshot1.jpg",
+    screenshot2: "public/images/screenshot2.jpg",
+    screenshot3: "public/images/screenshot3.jpg",
+    screenshot4: "public/images/screenshot4.jpg",
+    link: "https://example.com/ecommerce",
+    github: "https://github.com/yourusername/ecommerce-platform"
+  }
+];
+
+const projects2 = [
+  {
+    id: 4,
+    title: "Giuseppe's Cellar",
+    tags: ["React", "Canvas API", "TypeScript"],
+    thumbnail: "public/images/placeholder.jpg",
+    description: "A creative coding project that generates unique algorithmic art pieces based on user input and randomization.",
+    longDescription: "This application leverages mathematical algorithms to create unique visual compositions. Users can adjust parameters to influence the generative process, resulting in one-of-a-kind digital artworks. The project explores the intersection of code and creativity, using React for the interface and Canvas API for rendering graphics.",
+    technicalDetails: "",
+    screenshot1: "public/images/screenshot1.jpg",
+    screenshot2: "public/images/screenshot2.jpg",
+    screenshot3: "public/images/screenshot3.jpg",
+    screenshot4: "public/images/screenshot4.jpg",
+    link: "https://example.com/art-generator",
+    github: "https://github.com/yourusername/algorithmic-art"
+  },
+  {
+    id: 5,
+    title: "Chromatic Journey",
+    tags: ["D3.js", "React", "Firebase"],
+    thumbnail: "public/images/placeholder2.png",
+    description: "A dashboard that transforms complex datasets into interactive, visually compelling representations.",
+    longDescription: "This data visualization project makes complex information accessible through interactive charts and graphs. Built with D3.js and React, it features real-time updates via Firebase, custom animations, and responsive design for all device sizes. The visualization techniques range from standard bar charts to more experimental representations.",
+    technicalDetails: "",
+    screenshot1: "public/images/screenshot1.jpg",
+    screenshot2: "public/images/screenshot2.jpg",
+    screenshot3: "public/images/screenshot3.jpg",
+    screenshot4: "public/images/screenshot4.jpg",
+    link: "https://example.com/data-viz",
+    github: "https://github.com/yourusername/data-visualization"
+  },
+  {
+    id: 6,
+    title: "Chords of the Past",
+    tags: ["Next.js", "Tailwind CSS", "Stripe API"],
+    thumbnail: "public/images/placeholder3.jpg",
+    description: "A fully functional e-commerce platform with modern design, smooth animations, and secure payment processing.",
+    longDescription: "This e-commerce solution features a clean, intuitive interface built with Next.js and Tailwind CSS. It includes product filtering, user accounts, shopping cart functionality, and secure checkout via Stripe. Performance optimizations ensure quick load times and smooth transitions between pages.",
+    technicalDetails: "",
+    screenshot1: "public/images/screenshot1.jpg",
+    screenshot2: "public/images/screenshot2.jpg",
+    screenshot3: "public/images/screenshot3.jpg",
+    screenshot4: "public/images/screenshot4.jpg",
     link: "https://example.com/ecommerce",
     github: "https://github.com/yourusername/ecommerce-platform"
   },
   {
-    id: 4,
-    title: "Music Visualization Tool",
+    id: 7,
+    title: "Undeath",
     tags: ["Three.js", "Web Audio API", "React"],
     thumbnail: "public/images/placeholder4.png",
     description: "A 3D audio visualization tool that reacts to music in real-time, creating immersive visual experiences.",
     longDescription: "This project uses the Web Audio API to analyze audio frequencies and Three.js to render dynamic 3D visualizations that respond to music in real-time. Users can upload their own audio files or connect to streaming services. The visualizations adapt to different audio characteristics, creating unique visual patterns for each track.",
+    technicalDetails: "",
+    screenshot1: "public/images/screenshot1.jpg",
+    screenshot2: "public/images/screenshot2.jpg",
+    screenshot3: "public/images/screenshot3.jpg",
+    screenshot4: "public/images/screenshot4.jpg",
+    link: "https://example.com/music-viz",
+    github: "https://github.com/yourusername/music-visualization"
+  }
+];
+
+const projects3 = [
+  {
+    id: 8,
+    title: "OPUS Web - ERP Module",
+    tags: ["React", "Canvas API", "TypeScript"],
+    thumbnail: "public/images/placeholder.jpg",
+    description: "A creative coding project that generates unique algorithmic art pieces based on user input and randomization.",
+    longDescription: "This application leverages mathematical algorithms to create unique visual compositions. Users can adjust parameters to influence the generative process, resulting in one-of-a-kind digital artworks. The project explores the intersection of code and creativity, using React for the interface and Canvas API for rendering graphics.",
+    technicalDetails: "",
+    screenshot1: "public/images/screenshot1.jpg",
+    screenshot2: "public/images/screenshot2.jpg",
+    screenshot3: "public/images/screenshot3.jpg",
+    screenshot4: "public/images/screenshot4.jpg",
+    link: "https://example.com/art-generator",
+    github: "https://github.com/yourusername/algorithmic-art"
+  },
+  {
+    id: 9,
+    title: "Condo Connect - Property Management System",
+    tags: ["D3.js", "React", "Firebase"],
+    thumbnail: "public/images/placeholder2.png",
+    description: "A dashboard that transforms complex datasets into interactive, visually compelling representations.",
+    longDescription: "This data visualization project makes complex information accessible through interactive charts and graphs. Built with D3.js and React, it features real-time updates via Firebase, custom animations, and responsive design for all device sizes. The visualization techniques range from standard bar charts to more experimental representations.",
+    technicalDetails: "",
+    screenshot1: "public/images/screenshot1.jpg",
+    screenshot2: "public/images/screenshot2.jpg",
+    screenshot3: "public/images/screenshot3.jpg",
+    screenshot4: "public/images/screenshot4.jpg",
+    link: "https://example.com/data-viz",
+    github: "https://github.com/yourusername/data-visualization"
+  },
+  {
+    id: 10,
+    title: "Journalling Mobile App",
+    tags: ["Next.js", "Tailwind CSS", "Stripe API"],
+    thumbnail: "public/images/placeholder3.jpg",
+    description: "A fully functional e-commerce platform with modern design, smooth animations, and secure payment processing.",
+    longDescription: "This e-commerce solution features a clean, intuitive interface built with Next.js and Tailwind CSS. It includes product filtering, user accounts, shopping cart functionality, and secure checkout via Stripe. Performance optimizations ensure quick load times and smooth transitions between pages.",
+    technicalDetails: "",
+    screenshot1: "public/images/screenshot1.jpg",
+    screenshot2: "public/images/screenshot2.jpg",
+    screenshot3: "public/images/screenshot3.jpg",
+    screenshot4: "public/images/screenshot4.jpg",
+    link: "https://example.com/ecommerce",
+    github: "https://github.com/yourusername/ecommerce-platform"
+  },
+  {
+    id: 11,
+    title: "Purrsonality - Web Visual Novel",
+    tags: ["Three.js", "Web Audio API", "React"],
+    thumbnail: "public/images/placeholder4.png",
+    description: "A 3D audio visualization tool that reacts to music in real-time, creating immersive visual experiences.",
+    longDescription: "This project uses the Web Audio API to analyze audio frequencies and Three.js to render dynamic 3D visualizations that respond to music in real-time. Users can upload their own audio files or connect to streaming services. The visualizations adapt to different audio characteristics, creating unique visual patterns for each track.",
+    technicalDetails: "",
+    screenshot1: "public/images/screenshot1.jpg",
+    screenshot2: "public/images/screenshot2.jpg",
+    screenshot3: "public/images/screenshot3.jpg",
+    screenshot4: "public/images/screenshot4.jpg",
+    link: "https://example.com/music-viz",
+    github: "https://github.com/yourusername/music-visualization"
+  }, 
+  {
+    id: 12,
+    title: "Maison Wells - Personal Portfolio",
+    tags: ["Three.js", "Web Audio API", "React"],
+    thumbnail: "public/images/placeholder4.png",
+    description: "A 3D audio visualization tool that reacts to music in real-time, creating immersive visual experiences.",
+    longDescription: "This project uses the Web Audio API to analyze audio frequencies and Three.js to render dynamic 3D visualizations that respond to music in real-time. Users can upload their own audio files or connect to streaming services. The visualizations adapt to different audio characteristics, creating unique visual patterns for each track.",
+    technicalDetails: "",
+    screenshot1: "public/images/screenshot1.jpg",
+    screenshot2: "public/images/screenshot2.jpg",
+    screenshot3: "public/images/screenshot3.jpg",
+    screenshot4: "public/images/screenshot4.jpg",
     link: "https://example.com/music-viz",
     github: "https://github.com/yourusername/music-visualization"
   }
@@ -97,7 +243,8 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
   };
 
   const getSelectedProject = () => {
-    return projects.find(project => project.id === selectedProject);
+    const allProjects = [...projects, ...projects2, ...projects3];
+    return allProjects.find(project => project.id === selectedProject);
   };
 
   return (
@@ -107,7 +254,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
         className="px-4 md:px-8 lg:px-16 py-8 transition-opacity duration-1000 bg-black z-10"
         style={{ opacity: fadeIn ? 1 : 0 }}
       >
-        <h1 className="text-5xl md:text-6xl mb-4 font-serif">Professional Profile</h1>
+        <h1 className="text-4xl md:text-5xl mb-4 font-serif">[Professional Profile]</h1>
         <div className="h-px w-full bg-white opacity-50 mb-8"></div>
         <div className="flex space-x-6">
           <button
@@ -140,39 +287,117 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
         >
           {/* Projects Section */}
           {currentSection === 'projects' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project) => (
-                <div 
-                  key={project.id} 
-                  className="border border-white hover:border-purple-400 p-6 transition-all duration-300 cursor-pointer group relative"
-                  onClick={() => openModal(project.id)}
-                >
-                  <div className="relative aspect-video mb-4 overflow-hidden">
-                    <img 
-                      src={project.thumbnail} 
-                      alt={project.title} 
-                      className="w-full h-full object-cover transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-1 transition-all duration-500 filter contrast-110"
-                    />
-                  </div>
-                  <h3 className="text-2xl mb-2">{project.title}</h3>
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {project.tags.map((tag, index) => (
-                      <span key={index} className="text-s px-2 py-1 border border-white text-white">
-                        {tag}
+            <div>
+              <h1 className="text-2xl md:text-3xl mb-4 font-serif">Computer Graphics and Geometric Modeling</h1>
+              <div className="h-px w-full bg-white opacity-50 mb-8"></div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {projects.map((project) => (
+                  <div 
+                    key={project.id} 
+                    className="border border-white hover:border-purple-400 p-6 transition-all duration-300 cursor-pointer group relative"
+                    onClick={() => openModal(project.id)}
+                  >
+                    <div className="relative aspect-video mb-4 overflow-hidden">
+                      <img 
+                        src={project.thumbnail} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-1 transition-all duration-500 filter contrast-110"
+                      />
+                    </div>
+                    <h3 className="text-2xl mb-2">{project.title}</h3>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {project.tags.map((tag, index) => (
+                        <span key={index} className="text-s px-2 py-1 border border-white text-white">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="text-gray-300 text-m">{project.description}</p>
+                    
+                    {/* Overlay on hover */}
+                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-center justify-center"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                        [view details]
                       </span>
-                    ))}
+                    </div>
                   </div>
-                  <p className="text-gray-300 text-m">{project.description}</p>
-                  
-                  {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-center justify-center"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white text-4xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                      [view details]
-                    </span>
+                ))}
+              </div>
+
+              <h1 className="text-2xl md:text-3xl mb-4 mt-8 font-serif">Game Development and Art</h1>
+              <div className="h-px w-full bg-white opacity-50 mb-8"></div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {projects2.map((project) => (
+                  <div 
+                    key={project.id} 
+                    className="border border-white hover:border-purple-400 p-6 transition-all duration-300 cursor-pointer group relative"
+                    onClick={() => openModal(project.id)}
+                  >
+                    <div className="relative aspect-video mb-4 overflow-hidden">
+                      <img 
+                        src={project.thumbnail} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-1 transition-all duration-500 filter contrast-110"
+                      />
+                    </div>
+                    <h3 className="text-2xl mb-2">{project.title}</h3>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {project.tags.map((tag, index) => (
+                        <span key={index} className="text-s px-2 py-1 border border-white text-white">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="text-gray-300 text-m">{project.description}</p>
+                    
+                    {/* Overlay on hover */}
+                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-center justify-center"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                        [view details]
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              <h1 className="text-2xl md:text-3xl mb-4 mt-8 font-serif">Software and Web Development</h1>
+              <div className="h-px w-full bg-white opacity-50 mb-8"></div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {projects3.map((project) => (
+                  <div 
+                    key={project.id} 
+                    className="border border-white hover:border-purple-400 p-6 transition-all duration-300 cursor-pointer group relative"
+                    onClick={() => openModal(project.id)}
+                  >
+                    <div className="relative aspect-video mb-4 overflow-hidden">
+                      <img 
+                        src={project.thumbnail} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-1 transition-all duration-500 filter contrast-110"
+                      />
+                    </div>
+                    <h3 className="text-2xl mb-2">{project.title}</h3>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {project.tags.map((tag, index) => (
+                        <span key={index} className="text-s px-2 py-1 border border-white text-white">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="text-gray-300 text-m">{project.description}</p>
+                    
+                    {/* Overlay on hover */}
+                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-center justify-center"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                        [view details]
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
@@ -195,7 +420,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
           
           {/* Footer */}
           <div
-            className="mt-16 transition-opacity duration-1000 delay-500"
+            className="mt-12 transition-opacity duration-1000 delay-500"
             style={{ opacity: fadeIn ? 1 : 0 }}
           >
             <div className="h-px w-full bg-white opacity-50 mb-8"></div>
@@ -270,20 +495,16 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                   {/* Additional content for detailed view */}
                   <div className="mt-8">
                     <h3 className="text-xl mb-2">Technical Details</h3>
-                    <p className="text-gray-300 mb-4">
-                      This section can contain in-depth technical explanations about how the project was built,
-                      challenges faced, and solutions implemented. You can include code snippets, architecture
-                      diagrams, or any other technical details relevant to the project.
-                    </p>
+                    <p className="text-gray-300 mb-4">{getSelectedProject()?.technicalDetails}</p>
                   </div>
                   
                   <div className="mt-8">
                     <h3 className="text-xl mb-2">Gallery</h3>
                     <div className="grid grid-cols-2 gap-4 mt-4">
-                      <img src="/api/placeholder/400/300" alt="Additional screenshot" className="w-full h-full object-cover" />
-                      <img src="/api/placeholder/400/300" alt="Additional screenshot" className="w-full h-full object-cover" />
-                      <img src="/api/placeholder/400/300" alt="Additional screenshot" className="w-full h-full object-cover" />
-                      <img src="/api/placeholder/400/300" alt="Additional screenshot" className="w-full h-full object-cover" />
+                      <img src={getSelectedProject()?.screenshot1}  alt="Additional screenshot" className="w-full h-full object-cover" />
+                      <img src={getSelectedProject()?.screenshot2}  alt="Additional screenshot" className="w-full h-full object-cover" />
+                      <img src={getSelectedProject()?.screenshot3}  alt="Additional screenshot" className="w-full h-full object-cover" />
+                      <img src={getSelectedProject()?.screenshot4}  alt="Additional screenshot" className="w-full h-full object-cover" />
                     </div>
                   </div>
                 </div>
