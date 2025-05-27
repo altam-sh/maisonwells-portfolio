@@ -7,127 +7,127 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
 
   const galleryImages = [
     {
-      src: "/public/images/gallery/mockup.png",
+      src: "/images/gallery/mockup.png",
       alt: "",
       description: "mockup of a hoodie sample I designed"
     },
     {
-      src: "/public/images/gallery/amazongames.JPG",
+      src: "/images/gallery/amazongames.JPG",
       alt: "",
       description: "Amazon Games representative playtesting our game at McGameJam 2025"
     },
     {
-      src: "/public/images/gallery/pencilsketch.PNG",
+      src: "/images/gallery/pencilsketch.PNG",
       alt: "",
       description: "guided prompt pencil sketch"
     },
     {
-      src: "/public/images/gallery/gala.JPG",
+      src: "/images/gallery/gala.JPG",
       alt: "",
       description: "CS Games Gala 2025"
     },
     {
-      src: "/public/images/gallery/yourheart.png",
+      src: "/images/gallery/yourheart.png",
       alt: "",
       description: 'Skit I directed called "Your Heart"'
     },
     {
-      src: "/public/images/gallery/debugging.jpg",
+      src: "/images/gallery/debugging.jpg",
       alt: "",
       description: "Debugging Competition at CSGames 2024"
     },
     {
-      src: "/public/images/gallery/mbam.jpg",
+      src: "/images/gallery/mbam.jpg",
       alt: "",
       description: "Original music performance a Musée des Beaux-Arts Montréal"
     },
     {
-      src: "/public/images/gallery/moodboard.png",
+      src: "/images/gallery/moodboard.png",
       alt: "",
       description: 'Moodboard for a game I designed called "Liminal Echo"'
     },
         {
-      src: "/public/images/gallery/calmbeforethestorm.png",
+      src: "/images/gallery/calmbeforethestorm.png",
       alt: "",
       description: 'Skit I directed called "The Calm Before the Storm"'
     },
     {
-      src: "/public/images/gallery/diwali.jpg",
+      src: "/images/gallery/diwali.jpg",
       alt: "",
       description: "Turnout of Diwali event hosted and sponsored by my brother and I"
     },
     {
-      src: "/public/images/gallery/pencilsketch2.PNG",
+      src: "/images/gallery/pencilsketch2.PNG",
       alt: "",
       description: "Guided prompt pencil sketch"
     },
     {
-      src: "/public/images/gallery/csgames24.png",
+      src: "/images/gallery/csgames24.png",
       alt: "",
       description: "CSGames 2024 team photo"
     },    
     {
-      src: "/public/images/gallery/storm.png",
+      src: "/images/gallery/storm.png",
       alt: "",
       description: 'Mini-movie I directed called "Storm"'
     },
     {
-      src: "/public/images/gallery/puzzlehero.png",
+      src: "/images/gallery/puzzlehero.png",
       alt: "",
       description: "Our Puzzle Hero winning team photo at CSGames 2025"
     },
     {
-      src: "/public/images/gallery/csgames25.png",
+      src: "/images/gallery/csgames25.png",
       alt: "",
       description: "CSGames 2025 team photo"
     },
     {
-      src: "/public/images/gallery/clothing.png",
+      src: "/images/gallery/clothing.png",
       alt: "",
       description: "Coat I designed and made for an event"
     },
     {
-      src: "/public/images/gallery/fallingstars.jpg",
+      src: "/images/gallery/fallingstars.jpg",
       alt: "",
       description: '"Falling stars" single promotional poster"'
     },
     {
-      src: "/public/images/gallery/musicman.jpg",
+      src: "/images/gallery/musicman.jpg",
       alt: "",
       description: 'Musical Theatre performance of "The Music Man"'
     },
     {
-      src: "/public/images/gallery/mcgamejamgame.JPG",
+      src: "/images/gallery/mcgamejamgame.JPG",
       alt: "",
       description: "McGameJam 2025 game we made in 48 hours"
     },
     {
-      src: "/public/images/gallery/jazzband.jpg",
+      src: "/images/gallery/jazzband.jpg",
       alt: "",
       description: "Our Jazz Band performance at Rio Tinto theatre in the Montreal International Jazz Festival"
     },
     {
-      src: "/public/images/gallery/diwalisetup.png",
+      src: "/images/gallery/diwalisetup.png",
       alt: "",
       description: "Diwali event setup at the venue"
     },
     {
-      src: "/public/images/gallery/conuhacks9.jpg",
+      src: "/images/gallery/conuhacks9.jpg",
       alt: "",
       description: "ConUHacks IX team photo"
     },
     {
-      src: "/public/images/gallery/mcgamejam.jpg",
+      src: "/images/gallery/mcgamejam.jpg",
       alt: "",
       description: "McGameJam 2025 Team Photo"
     },
     {
-      src: "/public/images/gallery/posterpresentation.jpg",
+      src: "/images/gallery/posterpresentation.jpg",
       alt: "",
       description: "Capstone project poster presentation at Concordia University"
     },
     {
-      src: "/public/images/gallery/",
+      src: "/images/gallery/",
       alt: "",
       description: ""
     }
