@@ -529,10 +529,10 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                   <div className="mt-8">
                     <h3 className="text-xl mb-2">Gallery</h3>
                     <div className="grid grid-cols-2 gap-4 mt-4">
-                      <img src={getSelectedProject()?.screenshot1}  alt="Additional screenshot" className="w-full h-full object-cover" />
-                      <img src={getSelectedProject()?.screenshot2}  alt="Additional screenshot" className="w-full h-full object-cover" />
-                      <img src={getSelectedProject()?.screenshot3}  alt="Additional screenshot" className="w-full h-full object-cover" />
-                      <img src={getSelectedProject()?.screenshot4}  alt="Additional screenshot" className="w-full h-full object-cover" />
+                      <img src={getSelectedProject()?.screenshot1}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover" />
+                      <img src={getSelectedProject()?.screenshot2}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover" />
+                      <img src={getSelectedProject()?.screenshot3}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover" />
+                      <img src={getSelectedProject()?.screenshot4}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover" />
                     </div>
                   </div>
                 </div>
