@@ -77,7 +77,7 @@ const ArrowButton: FC<ArrowButtonProps> = ({
 
   const padding = {
     top: "mt-[3vw]",
-    bottom: "mb-[3vw]",
+    bottom: "mb-20 sm:mb-[3vw]", 
     left: "ml-[3vw]",
     right: "mr-[3vw]",
   }[direction];
@@ -98,7 +98,8 @@ const ArrowButton: FC<ArrowButtonProps> = ({
         src={svgPath}
         alt={`${direction} arrow`}
         className={clsx(
-          "w-[4vw] h-auto transition-transform duration-300 ease-in-out",
+          "w-12 h-auto sm:w-16 md:w-[4vw]",
+          "transition-transform duration-300 ease-in-out",
           "transition-opacity duration-300",
           "hover:opacity-70",
           rotation,

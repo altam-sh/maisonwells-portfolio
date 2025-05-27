@@ -68,7 +68,7 @@ const MainMenu: FC<PageProps> = ({ navigate }) => {
         style={{ opacity: fadeIn ? 1 : 0 }}
       >
         <button
-          className="text-[1.2vw] px-6 py-3 bg-transparent hover:text-purple-400 hover:-translate-y-1 transition-all duration-300 font-serif"
+          className="text-base sm:text-lg md:text-[1.2vw] px-6 py-3 bg-transparent hover:text-purple-400 hover:-translate-y-1 transition-all duration-300 font-serif"
           onClick={() => {
             setPictureScale(1);
             setFadeIn(false);
