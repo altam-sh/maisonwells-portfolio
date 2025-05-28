@@ -89,7 +89,7 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
               <img 
                 src="/images/ProfilePicture.png" 
                 alt="Profile"
-                className="relative z-10 object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="relative z-10 object-cover hover:grayscale-100 transition-all duration-700"
                   style={{
                   width: '20vw',
                   height: '25vw',
