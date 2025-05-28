@@ -249,6 +249,8 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
   const [fadeIn, setFadeIn] = useState<boolean>(false);
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [imageExpanded, setImageExpanded] = useState<boolean>(false);
   const [currentSection, setCurrentSection] = useState<'projects' | 'experience'>('projects');
 
   useEffect(() => {
@@ -266,6 +268,18 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
     setModalOpen(false);
     setTimeout(() => {
       setSelectedProject(null);
+    }, 300);
+  };
+
+  const expandImage = (image: string) => {
+    setSelectedImage(image);
+    setImageExpanded(true);
+  };
+
+  const closeImage = () => {
+    setImageExpanded(false);
+    setTimeout(() => {
+      setSelectedImage(null);
     }, 300);
   };
 
@@ -328,7 +342,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                       <img 
                         src={project.thumbnail} 
                         alt={project.title} 
-                        className="w-full h-full object-cover transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-1 transition-all duration-500 filter contrast-110"
+                        className="w-full h-full object-cover transform duration-500 group-hover:scale-105 group-hover:grayscale-100 transition-all duration-500"
                       />
                     </div>
                     <h3 className="text-2xl mb-2">{project.title}</h3>
@@ -365,7 +379,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                       <img 
                         src={project.thumbnail} 
                         alt={project.title} 
-                        className="w-full h-full object-contain transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-1 transition-all duration-500 filter contrast-110"
+                        className="w-full h-full object-contain transform duration-500 group-hover:scale-105 group-hover:grayscale-100 transition-all duration-500"
                       />
                     </div>
                     <h3 className="text-2xl mb-2">{project.title}</h3>
@@ -402,7 +416,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                       <img 
                         src={project.thumbnail} 
                         alt={project.title} 
-                        className="w-full h-full object-cover transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-1 transition-all duration-500 filter contrast-110"
+                        className="w-full h-full object-cover transform duration-500 group-hover:scale-105 group-hover:grayscale-100 transition-all duration-500"
                       />
                     </div>
                     <h3 className="text-2xl mb-2">{project.title}</h3>
@@ -529,10 +543,10 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                   <div className="mt-8">
                     <h3 className="text-xl mb-2">Gallery</h3>
                     <div className="grid grid-cols-2 gap-4 mt-4">
-                      <img src={getSelectedProject()?.screenshot1}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover" />
-                      <img src={getSelectedProject()?.screenshot2}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover" />
-                      <img src={getSelectedProject()?.screenshot3}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover" />
-                      <img src={getSelectedProject()?.screenshot4}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover" />
+                      <img src={getSelectedProject()?.screenshot1}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover hover:scale-102 transition-all duration-300" onClick={() => {expandImage(getSelectedProject()!.screenshot1)}}/>
+                      <img src={getSelectedProject()?.screenshot2}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover hover:scale-102 transition-all duration-300" onClick={() => {expandImage(getSelectedProject()!.screenshot2)}}/>
+                      <img src={getSelectedProject()?.screenshot3}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover hover:scale-102 transition-all duration-300" onClick={() => {expandImage(getSelectedProject()!.screenshot3)}}/>
+                      <img src={getSelectedProject()?.screenshot4}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover hover:scale-102 transition-all duration-300" onClick={() => {expandImage(getSelectedProject()!.screenshot4)}}/>
                     </div>
                   </div>
                 </div>
@@ -563,6 +577,29 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                 </div>
               </div>
             )}
+
+            {/* Details Picture Modal */}
+            {selectedImage !== null && (
+              <div 
+                className={`fixed inset-0 bg-black/60 bg-opacity-70 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-opacity duration-300 ${imageExpanded ? 'opacity-100' : 'opacity-0'}`}
+                onClick={closeImage}
+              >
+                <div 
+                  className="overflow-y-auto relative"
+                  style={{ width: 'calc(100% * 2/3 + 2rem)' }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <div className="modal-content space-y-8 ">
+                    <div className="relative mx-auto w-full aspect-video overflow-hidden">
+                      <img 
+                        src={selectedImage} 
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )} 
           </div>
         </div>
       )}
