@@ -342,7 +342,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                       <img 
                         src={project.thumbnail} 
                         alt={project.title} 
-                        className="w-full h-full object-cover transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-1 transition-all duration-500 filter contrast-110"
+                        className="w-full h-full object-cover transform duration-500 group-hover:scale-105 group-hover:grayscale-100 transition-all duration-500"
                       />
                     </div>
                     <h3 className="text-2xl mb-2">{project.title}</h3>
@@ -379,7 +379,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                       <img 
                         src={project.thumbnail} 
                         alt={project.title} 
-                        className="w-full h-full object-contain transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-1 transition-all duration-500 filter contrast-110"
+                        className="w-full h-full object-contain transform duration-500 group-hover:scale-105 group-hover:grayscale-100 transition-all duration-500"
                       />
                     </div>
                     <h3 className="text-2xl mb-2">{project.title}</h3>
@@ -416,7 +416,7 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                       <img 
                         src={project.thumbnail} 
                         alt={project.title} 
-                        className="w-full h-full object-cover transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-1 transition-all duration-500 filter contrast-110"
+                        className="w-full h-full object-cover transform duration-500 group-hover:scale-105 group-hover:grayscale-100 transition-all duration-500"
                       />
                     </div>
                     <h3 className="text-2xl mb-2">{project.title}</h3>
