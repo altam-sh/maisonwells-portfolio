@@ -1,9 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { PageProps} from '../App';
+import { X } from 'lucide-react';
 
 const Gallery: React.FC<PageProps> = ({ navigate }) => {
   const [fadeIn, setFadeIn] = useState<boolean>(false);
   const [slideUp, setSlideUp] = useState<boolean>(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedDescription, setSelectedDescription] = useState<string | null>(null);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+
+    const openModal = (image: string, description: string) => {
+    setSelectedImage(image);
+    setSelectedDescription(description);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setTimeout(() => {
+      setSelectedImage(null);
+    }, 300);
+  };
 
   const galleryImages = [
     {
@@ -15,6 +33,11 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
       src: "/images/gallery/amazongames.JPG",
       alt: "",
       description: "Amazon Games representative playtesting our game at McGameJam 2025"
+    },
+    {
+      src: "/images/gallery/debugging.jpg",
+      alt: "",
+      description: "Debugging Competition at CSGames 2024"
     },
     {
       src: "/images/gallery/pencilsketch.PNG",
@@ -32,14 +55,14 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
       description: 'Skit I directed called "Your Heart"'
     },
     {
-      src: "/images/gallery/debugging.jpg",
+      src: "/images/gallery/diwalisetup.png",
       alt: "",
-      description: "Debugging Competition at CSGames 2024"
+      description: "Diwali decorations and backdrop design"
     },
     {
       src: "/images/gallery/mbam.jpg",
       alt: "",
-      description: "Original music performance a Musée des Beaux-Arts Montréal"
+      description: "Original music performance a Musée des Beaux-Arts de Montréal"
     },
     {
       src: "/images/gallery/moodboard.png",
@@ -107,7 +130,7 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
       description: "Our Jazz Band performance at Rio Tinto theatre in the Montreal International Jazz Festival"
     },
     {
-      src: "/images/gallery/diwalisetup.png",
+      src: "/images/gallery/diwalisleep.png",
       alt: "",
       description: "Diwali event setup at the venue"
     },
@@ -304,6 +327,7 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
               transform: slideUp ? 'translateY(0)' : 'translateY(50px)',
               transition: `all 0.6s ease ${index * 0.1}s`
             }}
+            onClick={() => openModal(image.src, image.description)}
           >
             <img
               src={image.src}
@@ -349,6 +373,17 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
           </p>
         </div>
 
+        
+        <div className='absolute text-center mt-90'>
+            <p 
+              className="text-base md:text-lg font-serif mt-12 text-gray-300 leading-relaxed hover:text-[#8b5cf6]/60 hover:-translate-y-1 transition-all duration-300"
+              onClick={() => {
+              containerRef.current?.scrollIntoView({ behavior: 'smooth' });
+            }}>
+            [Scroll to view gallery]
+          </p>
+        </div>
+
         {/* Floating elements */}
         {/* <div className="absolute top-20 left-10 w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
         <div className="absolute top-40 right-20 w-1 h-1 bg-white rounded-full animate-ping"></div>
@@ -370,7 +405,7 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
       </div>
 
       {/* Gallery Section */}
-      <div className="pb-20">
+      <div className="pb-20" ref={containerRef}>
         <div
           className="text-center mb-12 mt-25"
           style={{
@@ -386,6 +421,40 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
         <PhotoGallery />
       </div>
 
+      {/* Picture Modal */}
+      {selectedImage !== null && (
+        <div 
+          className={`fixed inset-0 bg-black/60 bg-opacity-70 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-opacity duration-300 ${modalOpen ? 'opacity-100' : 'opacity-0'}`}
+          onClick={closeModal}
+        >
+          <div 
+            className="overflow-y-auto bg-black bg-opacity-90 border border-white p-8 relative"
+            style={{ width: 'calc(100% * 2/3 + 2rem)' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              className="sticky top-2 float-right text-white hover:text-purple-400 z-10"
+              onClick={closeModal}
+            >
+              <X size={24} />
+            </button>
+
+              <div className="modal-content space-y-8 ">
+                <div>
+                  <h2 className="text-2xl md:text-3xl mb-2 font-serif italic text-center">{selectedDescription}</h2>
+                </div>
+
+                <div className="relative mx-auto w-full aspect-video overflow-hidden">
+                  <img 
+                    src={selectedImage} 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+          </div>
+        </div>
+      )}
+
       {/* Subtle grid overlay */}
       <div 
         className="fixed inset-0 pointer-events-none opacity-5 z-0"
@@ -395,6 +464,7 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
           backgroundSize: '50px 50px'
         }}
       ></div>
+      
     </div>
   );
 };
