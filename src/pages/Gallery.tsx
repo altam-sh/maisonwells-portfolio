@@ -375,13 +375,13 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
 
         
         <div className='absolute text-center mt-90'>
-            <p 
+            <button 
               className="text-base md:text-lg font-serif mt-12 text-gray-300 leading-relaxed hover:text-[#8b5cf6]/60 hover:-translate-y-1 transition-all duration-300"
               onClick={() => {
               containerRef.current?.scrollIntoView({ behavior: 'smooth' });
             }}>
             [Scroll to view gallery]
-          </p>
+          </button>
         </div>
 
         {/* Floating elements */}
