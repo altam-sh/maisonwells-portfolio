@@ -543,10 +543,10 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                   <div className="mt-8">
                     <h3 className="text-xl mb-2">Gallery</h3>
                     <div className="grid grid-cols-2 gap-4 mt-4">
-                      <img src={getSelectedProject()?.screenshot1}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover" onClick={() => {expandImage(getSelectedProject()!.screenshot1)}}/>
-                      <img src={getSelectedProject()?.screenshot2}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover" onClick={() => {expandImage(getSelectedProject()!.screenshot2)}}/>
-                      <img src={getSelectedProject()?.screenshot3}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover" onClick={() => {expandImage(getSelectedProject()!.screenshot3)}}/>
-                      <img src={getSelectedProject()?.screenshot4}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover" onClick={() => {expandImage(getSelectedProject()!.screenshot4)}}/>
+                      <img src={getSelectedProject()?.screenshot1}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover hover:scale-102 transition-all duration-300" onClick={() => {expandImage(getSelectedProject()!.screenshot1)}}/>
+                      <img src={getSelectedProject()?.screenshot2}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover hover:scale-102 transition-all duration-300" onClick={() => {expandImage(getSelectedProject()!.screenshot2)}}/>
+                      <img src={getSelectedProject()?.screenshot3}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover hover:scale-102 transition-all duration-300" onClick={() => {expandImage(getSelectedProject()!.screenshot3)}}/>
+                      <img src={getSelectedProject()?.screenshot4}  alt="Additional screenshot" loading="lazy" className="w-full h-full object-cover hover:scale-102 transition-all duration-300" onClick={() => {expandImage(getSelectedProject()!.screenshot4)}}/>
                     </div>
                   </div>
                 </div>
