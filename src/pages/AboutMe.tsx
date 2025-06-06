@@ -140,7 +140,7 @@ const AboutMe: React.FC<PageProps> = ({ navigate }) => {
               }}
             >
               <p className="text-sm text-justify font-serif leading-relaxed text-gray-200 max-w-3xl">
-                Hello! my name is Altamash, or simply Alta, though most know me as <span className='italic'>Wells</span>. 
+                Hello! My name is Altamash, or simply Alta, though most know me as <span className='italic'>Wells</span>. 
                 I'm a software engineer based in Montréal with a deep love for the arts and a passion for creating digital experiences 
                 that blur the line between functionality and art. But most importantly, I greatly value the relationships I build with my peers,
                 and I strive to create a positive impact in their lives both through my work and beyond it. 
