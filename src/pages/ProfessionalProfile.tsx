@@ -7,28 +7,37 @@ const workExperience = [
     company: "BG Communications International Inc.",
     role: "Full-Stack Developer",
     period: "2024 - 2025",
-    description: "Development of interactive web applications using React, TypeScript and Springboot. Implemented modern UI/UX designs and optimized performance.",
-    description2: "Collaborated closely with clients to gather requirements and deliver tailored solutions."
+    description: "• Collaborated with industry stakeholders to design and build a multilingual ERP system.",
+    description2: "• Tech stack includes Spring Boot, Next.js, Docker, Tailwind CSS, and MS SQL.",
+    description3: "• Database management using OpenTelemetry, Prometheus, Jaeger and Grafana.",
+    description4: "• Leading front-end integration and contributing to RESTful API development.",
   },
   {
     company: "Genetec Inc.",
     role: "Integration Specialist",
     period: "2022",
-    description: "Tested and integrated various software solutions. Collaborated with cross-functional teams and clients to ensure seamless integration of systems.",
-    description2: "Produced detailed documentation and reports on integration processes and outcomes."
-  },
-  {
-    company: "Concordia University",
-    role: "B.Eng. Software Engineering (Completed)",
-    period: "2021-2025",
+    description: "• Conducted rigorous testing of surveillance equipment to ensure adherence to strict industry standards.",
+    description2: "• Authored detailed release notes, improving process transparency and QA traceability.",
+    description3: "• Acted as technical liaison in daily scrums and resolved customer tickets with 90%+ satisfaction rate.",
+    description4: "• Collaborated on troubleshooting, achieving 100% on-time completion of key deliverables.",
+    description5: "• Integrated monitoring and observability tools (Wireshark, Grafana) for performance tracking.",
   },
   {
     company: "10+ Hackathons and Competitions",
     role: "ConUHacks, McGame Jam, CsGames, and many more",
     period: "2021-2025",
-    description: "Completed Projects within various hackathons and competitions, showcasing skills in software engineering and time efficiency.",
-    description2: "Part of teams that won awards during competitions, including Puzzle Hero, Info-Theo, and others."
+    description: "• Completed Projects within various hackathons and competitions, showcasing skills in software engineering and time efficiency.",
+    description2: "• Part of teams that won awards during competitions, including Puzzle Hero, Info-Theo, and others.",
+    description3: "• Rapid prototyping for hackathons, building functional projects within 24-48 hours",
+    description4: "• Developed a range of projects, from web applications to game prototypes, demonstrating versatility and creativity.",
+    description5: "• Real-time challenge reveals requiring fast learning, problem-solving and teamwork under pressure.",
+  },
+  {
+    company: "Concordia University",
+    role: "B.Eng. Software Engineering (Completed)",
+    period: "2021-2025",
   }
+
 ];
 
 const projects = [
@@ -453,8 +462,12 @@ const ProfessionalProfile: React.FC<PageProps> = ({ navigate }) => {
                     <span className="text-xl text-gray-300">{job.role}</span>
                     <span className="text-gray-400">{job.period}</span>
                   </div>
-                  <p className="text-gray-300">{job.description}</p>
-                  <p className="text-gray-300">{job.description2}</p>
+                  <p className="text-gray-300 ml-7">{job.description}</p>
+                  <p className="text-gray-300 ml-7">{job.description2}</p>
+                  <p className="text-gray-300 ml-7">{job.description3}</p>
+                  <p className="text-gray-300 ml-7">{job.description4}</p>
+                  <p className="text-gray-300 ml-7">{job.description5}</p>
+
                 </div>
               ))}
             </div>
