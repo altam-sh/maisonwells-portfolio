@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import type { PageProps} from '../App';
-import { X } from 'lucide-react';
+import { X, ExternalLink } from 'lucide-react';
 
 const Gallery: React.FC<PageProps> = ({ navigate }) => {
   const [fadeIn, setFadeIn] = useState<boolean>(false);
@@ -365,6 +365,17 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
             transition: 'all 1s ease-out'
           }}
         >
+          
+          <a 
+            href="https://www.instagram.com/coeursendormis/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex justify-center text-xl md:text-2xl font-serif text-purple-400/80 leading-relaxed hover:text-[#8b5cf6]/60 hover:-translate-y-1 transition-all duration-300"
+            >
+            [Cœurs Endormis] <ExternalLink size={16} className="" /> 
+          </a>
+          <br/>
+          <br/>
           <h1 className="text-5xl md:text-5xl font-serif mb-8 tracking-tight leading-tight">
             A lot more to come...
           </h1>
