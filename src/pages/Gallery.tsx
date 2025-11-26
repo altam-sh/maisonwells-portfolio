@@ -150,6 +150,22 @@ const Gallery: React.FC<PageProps> = ({ navigate }) => {
       description: "Capstone project poster presentation at Concordia University"
     },
     {
+      src: "/images/gallery/ceperformance.jpg",
+      alt: "",
+      description: "Performance at Cœurs Endormis' first event [WAKE UP MTL]"
+    },
+    {
+      src: "/images/gallery/coeursendormis1.jpg",
+      alt: "",
+      description: "Cœurs Endormis Networking Ambiance"
+    },
+    {
+      src: "/images/gallery/welcomehomemerch.JPG",
+      alt: "",
+      description: "Merch design for Coeurs Endormis' Welcome Home Archive"
+    },
+    
+    {
       src: "/images/gallery/",
       alt: "",
       description: ""
