@@ -4,6 +4,15 @@ import type { PageProps } from '../App';
 
 const workExperience = [
   {
+    company: "Marquis Logiciels Inc.",
+    role: "Freelance Frontend Developer",
+    period: "2025 - Present",
+    description: "• Designed and implemented a modern web-based cleaning management system tailored for property owners and service providers.",
+    description2: "• Led front-end architecture and UI/UX design using React (Vite) and Tailwind CSS, ensuring a responsive and intuitive user experience across desktop and mobile devices.",
+    description3: "• Collaborated directly with stakeholders to gather requirements, refine features, and iterate rapidly based on feedback.",
+    description4: "• Ensured maintainable and modular code structure to support future feature expansion and SaaS scalability.",
+  },
+  {
     company: "BG Communications International Inc.",
     role: "Full-Stack Developer",
     period: "2024 - 2025",
