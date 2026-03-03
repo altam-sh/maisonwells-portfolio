@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import HomePage from './pages/HomePage';
 import MainMenu from './pages/MainMenu';
 import AboutMe from './pages/AboutMe';
