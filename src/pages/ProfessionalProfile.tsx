@@ -4,10 +4,18 @@ import type { PageProps } from '../App';
 
 const workExperience = [
   {
-    company: "Marquis Logiciels Inc.",
-    role: "Freelance Frontend Developer",
+    company: "Cœurs Endormis",
+    role: "Founder & Creative Director",
     period: "2025 - Present",
-    description: "• Designed and implemented a modern web-based cleaning management system tailored for property owners and service providers.",
+    description: "• Developed personal digital brand showcasing UI/UX systems, web engineering, and creative tooling",
+    description2: "• Organized and executed events from concept to delivery: logistics, budgeting, outreach, venue coordination, and promotion.",
+    description3: "• Demonstrates initiative, independent project ownership, and product thinking",
+  },
+  {
+    company: "Marquis Logiciels Inc.",
+    role: "Contract Frontend Developer",
+    period: "2025 - Present",
+    description: "• Designed complete application interfaces in Figma from concept to production-ready layouts.",
     description2: "• Led front-end architecture and UI/UX design using React (Vite) and Tailwind CSS, ensuring a responsive and intuitive user experience across desktop and mobile devices.",
     description3: "• Collaborated directly with stakeholders to gather requirements, refine features, and iterate rapidly based on feedback.",
     description4: "• Ensured maintainable and modular code structure to support future feature expansion and SaaS scalability.",
