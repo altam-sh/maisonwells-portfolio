@@ -184,8 +184,25 @@ const projects2 = [
 ];
 
 const projects3 = [
-  {
+    {
     id: 9,
+    title: "TidyBee - Cleaning Service Management App",
+    tags: ["React", "JavaScript", "Springboot", "Java", "Docker", "MySQL", "Figma"],
+    thumbnail: "/images/projects/tidybee.png",
+    description: "A modern full-stack cleaning management platform that connects property owners with cleaners, streamlining booking, scheduling, and payments in a scalable web application.",
+    longDescription: "This project is a full-stack cleaning management system designed to function similarly to a marketplace platform, connecting property owners and Airbnb hosts with professional cleaners. The application handles everything from property management and job scheduling to cleaner assignment and payment processing. The system supports role-based access for administrators, property owners, and cleaners, ensuring clear separation of permissions and workflows. Core features include property registration, recurring and on-demand cleaning bookings, job tracking, real-time status updates, Stripe payment integration, and dynamic scheduling logic.  The application emphasizes clean UI/UX, responsive design, and maintainable architecture, reflecting production-grade SaaS development practices.",
+    technicalDetails: "Frontend: React with TypeScript (Vite), responsive UI built with Tailwind CSS. Backend: Java with Spring Boot, RESTful API architecture with role-based authentication and authorization. Payments: Stripe integration for secure transaction processing and webhook handling. Database: Relational SQL schema designed for scalable booking, property, and user management. DevOps: Fully containerized using Docker with environment-based configuration. Testing: Unit and integration testing on backend services.",
+    screenshot1: "/images/projects/tidybee1.gif",
+    screenshot2: "/images/projects/tidybee2.png",
+    screenshot3: "/images/projects/tidybee3.png",
+    screenshot4: "/images/projects/tidybee4.png",
+    link: "",
+    github: "",
+    hasLink: false,
+    hasGithub: false
+  },
+  {
+    id: 10,
     title: "OPUS Web - ERP System",
     tags: ["React", "TypeScript", "Springboot", "Java", "Docker", "SQL", "JUnit", "Robot + Selenium", "Figma"],
     thumbnail: "/images/projects/opus.png",
@@ -202,7 +219,7 @@ const projects3 = [
     hasGithub: false
   },
   {
-    id: 10,
+    id: 11,
     title: "Condo Connect - Property Management System",
     tags: ["React", "CSS", "JavaScript", "Firebase", "Python", "JUnit", "Figma"],
     thumbnail: "/images/projects/condo.png",
@@ -219,7 +236,7 @@ const projects3 = [
     hasGithub: true
   },
   {
-    id: 11,
+    id: 12,
     title: "Purrsonality - Web Visual Novel",
     tags: ["React", "TypeScript", "Vite", "Digital Art", "Decision Trees", "Storywriting"],
     thumbnail: "/images/projects/purrsonality.png",
@@ -236,7 +253,7 @@ const projects3 = [
     hasGithub: true
   }, 
   {
-    id: 12,
+    id: 13,
     title: "Maison Wells - Personal Portfolio",
     tags: ["React", "TypeScript", "Vite", "Tailwindcss", "CSS Animation"],
     thumbnail: "/images/projects/maisonwells.png",
